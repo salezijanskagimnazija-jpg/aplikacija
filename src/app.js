@@ -48,13 +48,6 @@ function getUiConfig() {
         disableSignUp: {
           status: getDisableSignUpStatus()
         }
-      },
-      {
-        provider: 'microsoft.com',
-        loginHintKey: 'login_hint'
-      },
-      {
-        provider: 'apple.com',
       },  
     ],
     // Terms of service url.
@@ -207,15 +200,6 @@ var initApp = function() {
       'click', function() {
         deleteAccount();
       });
-
-  document.getElementById('recaptcha-normal').addEventListener(
-      'change', handleConfigChange);
-  document.getElementById('recaptcha-invisible').addEventListener(
-      'change', handleConfigChange);
-  // Check the selected reCAPTCHA mode.
-  document.querySelector(
-      'input[name="recaptcha"][value="' + getRecaptchaMode() + '"]')
-      .checked = true;
 
   document.getElementById('email-signInMethod-password').addEventListener(
       'change', handleConfigChange);
