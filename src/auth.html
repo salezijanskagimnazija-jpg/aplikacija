@@ -5,10 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Aplikacija</title>
+    <link rel="stylesheet" href="/src/auth.css">
+    <script type="module" src="/src/auth.js"></script>
     <script type="module" src="signup/signup.js"></script>
   </head>
   <body>
-    <div style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
+    <h1>Auth Page</h1>
+    <div class="methods-container">
+      <h2>Available methods</h2>
+      <button class="method-btn" data-method="email">Email</button>
+      <button class="method-btn" data-method="phone" hidden>Phone</button>
+      <button class="method-btn" data-method="google" hidden>Google</button>
+      <button class="method-btn" data-method="guest">Guest</button>
+    </div>
+    <div style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);" hidden>
         <h2>SignUp</h2>
         <form id="signup-form">
             <!--
@@ -32,7 +42,7 @@
             <button type="submit">Submit</button>
           </form>
     </div>
-    <div style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
+    <div class="email-signin-container" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);" hidden>
         <h2>SignIn</h2>
         <form id="signin-form">
             <!--
