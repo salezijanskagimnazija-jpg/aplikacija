@@ -18,7 +18,7 @@
       <button class="method-btn" data-method="google" hidden>Google</button>
       <button class="method-btn" data-method="guest">Guest</button>
     </div>
-    <div style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);" hidden>
+    <div class="method-form-container hidden" id="email-signup-container" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
         <h2>SignUp</h2>
         <form id="signup-form">
             <!--
@@ -39,10 +39,12 @@
               <label for="password">lozinka</label>
               <input type="password" id="password1" name="password1" required>
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit">Continue</button>
           </form>
+          <button type="button" id="signin-btn">SignIn</button>
+          <button type="button" id="back-btn" style="float: right;">Back</button>
     </div>
-    <div class="email-signin-container" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);" hidden>
+    <div class="method-form-container hidden" id="email-signin-container" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);">
         <h2>SignIn</h2>
         <form id="signin-form">
             <!--
@@ -63,10 +65,11 @@
               <label for="password">lozinka</label>
               <input type="password" id="password2" name="password2" required>
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit">Continue</button>
           </form>
+          <button type="button" id="signup-btn">SignUp</button>
+          <button type="button" id="back-btn" style="float: right;">Back</button>
     </div>
-
   </body>
 </html>
 
