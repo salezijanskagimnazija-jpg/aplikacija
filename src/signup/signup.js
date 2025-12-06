@@ -10,19 +10,21 @@ import { getFirestore, collection, addDoc, setDoc, doc } from "https://www.gstat
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-apiKey: "AIzaSyAfjGkYuKVHmES-plwEQANUu1wRYxHFsBw",
-authDomain: "aplikacija-21276.firebaseapp.com",
-projectId: "aplikacija-21276",
-storageBucket: "aplikacija-21276.firebasestorage.app",
-messagingSenderId: "268238860819",
-appId: "1:268238860819:web:da620228aa41aa64bf05e6",
-measurementId: "G-HMTTWPWD75"
+    apiKey: "AIzaSyAfjGkYuKVHmES-plwEQANUu1wRYxHFsBw",
+    authDomain: "aplikacija-21276.firebaseapp.com",
+    projectId: "aplikacija-21276",
+    storageBucket: "aplikacija-21276.firebasestorage.app",
+    messagingSenderId: "268238860819",
+    appId: "1:268238860819:web:da620228aa41aa64bf05e6",
+    measurementId: "G-HMTTWPWD75"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore(app);
+console.log("Firestore initialized:", db.app.options.projectId);
+
 
 let signupListener = function(event) {
     event.preventDefault(); // Prevent the default form submission (page reload)
@@ -50,7 +52,7 @@ function signUp(email, password) {
 
         document.getElementById('signup-form').removeEventListener('submit', signupListener);
 
-        document.getElementById('signup-form').addEventListener('submit', function(event) {
+        document.getElementById('signup-form').addEventListener('submit', async function(event) {
             event.preventDefault();
 
             const username = document.getElementById('username').value;
@@ -69,20 +71,22 @@ function signUp(email, password) {
             console.log("Name:", name, "Surname:", surname);
 
             console.log("User UID:", user.uid);
+            const strinf = String(user.uid);
+            const userRef = doc(db, "users", strinf);
 
             // Add user details to Firestore
-            setDoc(doc(db, "users", user.uid), {
+            setDoc(userRef, {
                 first: name,
                 last: surname,
             })
-            .then((docRef) => {
-                console.log("Document written with ID: ", docRef.id);
+            .then((userRef) => {
+                console.log("Document written with ID: ", user.uid);
+                window.location.assign("main.html");
             })
             .catch((error) => {
                 console.error("Error adding document: ", error);
             });
-
-            window.location.assign("main.html");
+        
         // ...
         });
     })
