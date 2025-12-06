@@ -1,16 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
 import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js';
-
-// Your same Firebase config
-const firebaseConfig = {
-  apiKey: "AIzaSyAfjGkYuKVHmES-plwEQANUu1wRYxHFsBw",
-  authDomain: "aplikacija-21276.firebaseapp.com",
-  projectId: "aplikacija-21276",
-  storageBucket: "aplikacija-21276.firebasestorage.app",
-  messagingSenderId: "268238860819",
-  appId: "1:268238860819:web:da620228aa41aa64bf05e6",
-  measurementId: "G-HMTTWPWD75"
-};
+import { firebaseConfig } from './config.js';
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
