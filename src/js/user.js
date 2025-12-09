@@ -1,7 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
-import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js';
+import { getAuth, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js';
 import { firebaseConfig } from './config.js';
-import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
+import { getFirestore, doc, getDoc} from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
 
 
 const app = initializeApp(firebaseConfig);
@@ -28,10 +28,10 @@ onAuthStateChanged(auth, async (user) => {
       const infoEl = document.getElementById("user-info");
       infoEl.innerHTML = 
             `Ime i prezime: ${punoIme} || ` +
-            `Godine: ${godine} || ` +
+            `Godine: ${godine || "-"} || ` +
             `Username: ${user.displayName} || ` +
             `Email: ${user.email} || ` +
-            `Rezultat testa: ${score}`;
+            `Rezultat testa: ${score || "-"}`;
 
     } catch (error) {
       console.error("Greška u dohvatu podataka: ", error);
@@ -39,3 +39,15 @@ onAuthStateChanged(auth, async (user) => {
 
   }
 });
+
+const logout = document.getElementById("logout-btn");
+if (logout) {
+  logout.addEventListener("click", async () => {
+    try {
+      await signOut(auth);
+      window.location.assign("index.html");
+    } catch (error) {
+      console.error("Greška:", error);
+    }
+  });
+}
