@@ -18,20 +18,24 @@ onAuthStateChanged(auth, async (user) => {
       let punoIme = ""; 
       let godine = 0;
       let score = 0;
+      let spol = "";
       if (userSnap.exists()) {
         const data = userSnap.data();
         godine = data.godine;
         score = data.score;
         punoIme = `${data.first} ${data.last}`;
+        spol = data.spol;
       }
 
       const infoEl = document.getElementById("user-info");
       infoEl.innerHTML = 
             `Ime i prezime: ${punoIme} || ` +
             `Godine: ${godine || "-"} || ` +
+            `Spol: ${spol || "-"} || ` +
             `Username: ${user.displayName} || ` +
             `Email: ${user.email} || ` +
             `Rezultat testa: ${score || "-"}`;
+          
 
     } catch (error) {
       console.error("Greška u dohvatu podataka: ", error);
