@@ -1,3 +1,3 @@
 # Aplikacija
-Aplikacija za web design. Cilj je pomoc srednjoskolcima prilikom izbora fakulteta.
 
+Aplikacija za web design. Cilj je pomoc srednjoskolcima prilikom izbora fakulteta.
