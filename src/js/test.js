@@ -1,6 +1,15 @@
 // test class
 class Test {
+    // Static property to hold the single instance
+    static #instance = null;
+
     constructor(time, questions) {
+        // If an instance already exists, return it
+        if (Test.#instance) {
+            return Test.#instance;
+        };
+
+        // Otherwise initialize normally
         this.time = time;
         this.questions = questions;
 
@@ -8,6 +17,13 @@ class Test {
         this.generate_test = this.generate_test.bind(this);
         this.start_timer = this.start_timer.bind(this);
         this.time_over = this.time_over.bind(this);
+
+        // Save this instance for future checks
+        Test.#instance = this;
+    };
+
+    static instanceExists() {
+        return Test.#instance !== null;
     };
 
     get generate() {
@@ -134,22 +150,30 @@ async function fetch_data(test_index) {
 
 // main function that runs when the test is started
 async function start_test() {
-    console.log("Retrieving test index...")
-    let test_index = localStorage.getItem("test_index");
+    // hide existing button
+    document.getElementById("start-btn").setAttribute("hidden", true);
 
-    console.log("Starting test " + test_index + "...");
+    // start function only if no under Test instance exists
+    if (Test.instanceExists()) {
+        console.log("An instance of Test already exists...");
+    } else {
+        console.log("Retrieving test index...")
+        let test_index = localStorage.getItem("test_index");
 
-    let test_data = await fetch_data(test_index);
+        console.log("Starting test " + test_index + "...");
 
-    console.log("Fetching over:")
-    console.log(test_data);
+        let test_data = await fetch_data(test_index);
 
-    console.log("Creating the new Test object...")
-    const _test = new Test(test_data["time"], test_data["questions"]);
+        console.log("Fetching over:")
+        console.log(test_data);
 
-    _test.generate;
+        console.log("Creating the new Test object...")
+        const _test = new Test(test_data["time"], test_data["questions"]);
 
-    _test.timer;
+        _test.generate;
+
+        _test.timer;
+    };
 };
 
 document.getElementById("start-btn").addEventListener("click", start_test);
