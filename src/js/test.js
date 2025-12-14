@@ -14,27 +14,23 @@ class Test {
         this.questions = questions;
 
         // Bind methods to preserve 'this' context
-        this.generate_test = this.generate_test.bind(this);
-        this.start_timer = this.start_timer.bind(this);
+        this.generate = this.generate.bind(this);
+        this.timer = this.timer.bind(this);
         this.time_over = this.time_over.bind(this);
 
         // Save this instance for future checks
         Test.#instance = this;
+
+        this.generate();
+        this.timer(this.time_over);
     };
 
     static instanceExists() {
         return Test.#instance !== null;
     };
 
-    get generate() {
-        return this.generate_test();
-    }
-
-    get timer() {
-        return this.start_timer(this.time_over);
-    }
     // function for dynamically generating test questions
-    generate_test = function() {
+    generate = function() {
         console.log("Generating test...");
 
         // loops over all the questions in the test object
@@ -62,7 +58,7 @@ class Test {
     };
 
     // function that creates and manages the timer
-    start_timer = function(time_over) {
+    timer = function(time_over) {
         console.log("Starting timer.")
 
         let total_time = this.time;
@@ -178,10 +174,6 @@ async function start_test() {
 
         console.log("Creating the new Test object...")
         const _test = new Test(test_data["time"], test_data["questions"]);
-
-        _test.generate;
-
-        _test.timer;
     };
 };
 
