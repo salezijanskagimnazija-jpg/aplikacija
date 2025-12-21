@@ -108,11 +108,14 @@ function displayMethod(method, action) {
     }
 }
 
-document.getElementById('back-btn').addEventListener('click', function() {
-    event.preventDefault();
+let back_btns = document.querySelectorAll('.back-btn');
 
-    window.location.reload();
-});
+for (let button of back_btns) {
+    button.addEventListener('click', function(event) {
+        event.preventDefault();
+        window.location.reload();
+    });
+}
 
 document.getElementById('signup-btn').addEventListener('click', function() {
     event.preventDefault();
