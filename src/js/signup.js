@@ -55,66 +55,75 @@ document.querySelector(".signup-btn").addEventListener("click", () => {
 });
 
 function displayMethod(method, action) {
-    console.log("Hiding methods...")
+    console.log("Hiding methods...");
     // hides available methods
     document.querySelector('.methods-container').classList.add('hidden');
 
     console.log("Displaying form...");
 
     if (method == "google") {
-        console.log("Chosen provider is Google. Opening popup...")
-        signInWithPopup(auth, google)
-        .then((result) => {
-            const user = result.user;
-            console.log("Google user signed in:", user);
-            
-            // Get Google profile data
-            const displayName = user.displayName || "";
-            const email = user.email;
-            const photoURL = user.photoURL || "";
-            
-            // Extract first/last name from displayName
-            let firstName = "";
-            let lastName = "";
-            if (displayName) {
-                const nameParts = displayName.split(' ');
-                firstName = nameParts[0] || "";
-                lastName = nameParts.slice(1).join(' ') || "";
-            }
-            
-            // Generate username from email
-            const username = email.split('@')[0];
-            
-            // Update Firebase profile
-            updateProfile(auth.currentUser, {
-                displayName: username, // or use displayName if you prefer
-                photoURL: photoURL
-            }).then(() => {
-                // Save to Firestore
-                const userRef = doc(db, "users", user.uid);
-                return setDoc(userRef, {
-                    username: username,
-                    first: firstName,
-                    last: lastName,
-                    email: email,
-                    photoURL: photoURL,
-                    provider: "google",
-                    createdAt: new Date()
-                });
-            }).then(() => {
-                console.log("Google user data saved to Firestore");
-                window.location.assign("main.html");
-            }).catch((error) => {
-                console.error("Error saving Google user data:", error);
-            });
-        }).catch((error) => {
-            console.error("Google sign-in error:", error);
-            // Optionally: go back to methods selection
-            document.querySelector('.methods-container').classList.remove('hidden');
-            document.querySelector(".userdata-container").classList.add('hidden');
-        });
+        googleLogin();
     } else {
-        console.log("Chosen email.")
+        emailLogin(action);
+    }
+}
+
+let googleLogin = function() {
+    console.log("Chosen provider is Google. Opening popup...")
+    signInWithPopup(auth, google)
+    .then((result) => {
+        const user = result.user;
+        console.log("Google user signed in:", user);
+        
+        // Get Google profile data
+        const displayName = user.displayName || "";
+        const email = user.email;
+        const photoURL = user.photoURL || "";
+        
+        // Extract first/last name from displayName
+        let firstName = "";
+        let lastName = "";
+        if (displayName) {
+            const nameParts = displayName.split(' ');
+            firstName = nameParts[0] || "";
+            lastName = nameParts.slice(1).join(' ') || "";
+        }
+        
+        // Generate username from email
+        const username = email.split('@')[0];
+        
+        // Update Firebase profile
+        updateProfile(auth.currentUser, {
+            displayName: username, // or use displayName if you prefer
+            photoURL: photoURL
+        }).then(() => {
+            // Save to Firestore
+            const userRef = doc(db, "users", user.uid);
+            return setDoc(userRef, {
+                username: username,
+                first: firstName,
+                last: lastName,
+                email: email,
+                photoURL: photoURL,
+                provider: "google",
+                createdAt: new Date()
+            });
+        }).then(() => {
+            console.log("Google user data saved to Firestore");
+            window.location.assign("main.html");
+        }).catch((error) => {
+            console.error("Error saving Google user data:", error);
+        });
+    }).catch((error) => {
+        console.error("Google sign-in error:", error);
+        // Optionally: go back to methods selection
+        document.querySelector('.methods-container').classList.remove('hidden');
+        document.querySelector(".userdata-container").classList.add('hidden');
+    });
+}
+
+let emailLogin = function(action) {
+    console.log("Chosen email.")
         // shows selected method container
         if (action == "signin") {
             console.log("Preparing email signin...");
@@ -145,7 +154,6 @@ function displayMethod(method, action) {
 
             document.getElementById('email-form').addEventListener('submit', signupListener);
         } 
-    }
 }
 
 let signinListener = function(event) {
