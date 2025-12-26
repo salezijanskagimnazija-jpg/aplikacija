@@ -29,6 +29,14 @@ const google = new GoogleAuthProvider();
 const db = getFirestore(app);
 console.log("Firestore initialized:", db.app.options.projectId);
 
+
+/** hides the loading text when everything is loaded and displays the methods container */
+let stop_loading_screen = function() {
+    document.querySelector(".loading").classList.add("hidden");
+    document.querySelector(".methods-container").classList.remove("hidden");
+};
+
+
 // Handle the redirect result
 getRedirectResult(auth)
     .then((result) => {
@@ -59,7 +67,8 @@ getRedirectResult(auth)
             
             update_firebase_profile(username, photoURL, user, firstName, lastName, email);
         } else {
-            console.log("No redirect.")
+            console.log("No redirect.");
+            stop_loading_screen();
         }
     })
     .catch((error) => {
@@ -81,14 +90,6 @@ let init_methods_form = function() {
 };
 init_methods_form();
 
-
-
-/** hides the loading text when everything is loaded and displays the methods container */
-let stop_loading_screen = function() {
-    document.querySelector(".loading").classList.add("hidden");
-    document.querySelector(".methods-container").classList.remove("hidden");
-};
-stop_loading_screen();
 
 /** Initialize all buttons with their event handlers. */
 let init_buttons = function() {
