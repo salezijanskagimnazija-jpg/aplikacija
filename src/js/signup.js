@@ -2,7 +2,16 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // Add Firebase products that you want to use
-import { getAuth, GoogleAuthProvider, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from 'https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js';
+import { 
+    getAuth, 
+    GoogleAuthProvider, 
+    signInWithPopup, 
+    signInWithRedirect,
+    getRedirectResult,
+    createUserWithEmailAndPassword, 
+    signInWithEmailAndPassword, 
+    updateProfile
+} from 'https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js';
 import { getFirestore, setDoc, doc } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -19,6 +28,13 @@ const google = new GoogleAuthProvider();
 
 const db = getFirestore(app);
 console.log("Firestore initialized:", db.app.options.projectId);
+
+window.addEventListener('load', () => {
+    if (localStorage.getItem("redirect") == 'true') {
+        console.log("Detected redirect result, handling sign-in...");
+        googleLogin();
+    }
+})
 
 /** Attaches an event listener to all buttons in the methods form. */
 let init_methods_form = function() {
@@ -123,7 +139,68 @@ let update_firebase_profile = function(username, photoURL, user,
         console.error("Error saving Google user data:", error);
     });
 }
+
+/** Handle google login with redirect (iOS compatible). */
+let googleLogin = function() {
+    console.log("Chosen provider is Google. Using redirect...")
+
+    // First, check if we're returning from a redirect
+    if (localStorage.getItem("redirect") == "true") {
+        // Handle the redirect result
+        getRedirectResult(auth)
+            .then((result) => {
+                if (result) {
+                    const user = result.user;
+                    console.log("Google user signed in:", user);
+                    
+                    // Get Google profile data
+                    const displayName = user.displayName || "";
+                    const email = user.email;
+                    const photoURL = user.photoURL || "";
+                    
+                    // Extract first/last name from displayName
+                    let firstName = "";
+                    let lastName = "";
+                    if (displayName) {
+                        const nameParts = displayName.split(' ');
+                        firstName = nameParts[0] || "";
+                        lastName = nameParts.slice(1).join(' ') || "";
+                    }
+                    
+                    // Generate username from email
+                    const username = email.split('@')[0];
+                    
+                    update_firebase_profile(username, photoURL, user, firstName, lastName, email);
+                } else {
+                    // No redirect result, go back to methods selection
+                    document.querySelector('.methods-container').classList.remove('hidden');
+                    document.querySelector(".userdata-container").classList.add('hidden');
+                }
+            })
+            .catch((error) => {
+                console.error("Google redirect sign-in error:", error);
+                document.querySelector('.methods-container').classList.remove('hidden');
+                document.querySelector(".userdata-container").classList.add('hidden');
+            });
+    } else {
+        // Start the sign-in with redirect
+        signInWithRedirect(auth, google)
+            .then(() => {
+                // This will redirect away from your page
+                console.log("Redirecting to Google sign-in...");
+                localStorage.setItem("redirect", 'true');
+            })
+            .catch((error) => {
+                console.error("Error starting redirect:", error);
+                document.querySelector('.methods-container').classList.remove('hidden');
+                document.querySelector(".userdata-container").classList.add('hidden');
+            });
+    }
+}
+/* ===================================== */
+/* TEMPORARILY DISABLED TO TEST REDIRECT */
 /** Handle google popup login. */
+/*
 let googleLogin = function() {
     console.log("Chosen provider is Google. Opening popup...")
     signInWithPopup(auth, google)
@@ -157,6 +234,8 @@ let googleLogin = function() {
         document.querySelector(".userdata-container").classList.add('hidden');
     });
 }
+*/
+/* ========================================= */
 
 /** Prepares the email signin form. */
 function prepare_email_signin() {
