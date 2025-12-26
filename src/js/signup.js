@@ -20,45 +20,60 @@ const google = new GoogleAuthProvider();
 const db = getFirestore(app);
 console.log("Firestore initialized:", db.app.options.projectId);
 
-// Attaches an event listener to all buttons
-let method = null;
-document.querySelectorAll('.method-btn').forEach(button => {
-    button.addEventListener('click', function() {
-        method = this.getAttribute('data-method');
-        
-        // console.log("Selected method:", method);
-        displayMethod(method, "signin");
+/** Attaches an event listener to all buttons in the methods form. */
+let init_methods_form = function() {
+    let method = null;
+    document.querySelectorAll('.method-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            method = this.getAttribute('data-method');
+            
+            // console.log("Selected method:", method);
+            displayMethod(method, "signin");
+        });
     });
-});
+};
+init_methods_form();
 
-// hides the loading text when everything is loaded and displays the methods container
-document.querySelector(".loading").classList.add("hidden");
-document.querySelector(".methods-container").classList.remove("hidden");
+/** hides the loading text when everything is loaded and displays the methods container */
+let stop_loading_screen = function() {
+    document.querySelector(".loading").classList.add("hidden");
+    document.querySelector(".methods-container").classList.remove("hidden");
+};
+stop_loading_screen();
 
-document.querySelector(".back-btn").addEventListener("click", () => {
-    event.preventDefault();
+/** Initialize all buttons with their event handlers. */
+let init_buttons = function() {
+    document.querySelector(".back-btn").addEventListener("click", () => {
+        event.preventDefault();
 
-    window.location.reload();
-});
+        window.location.reload();
+    });
 
-document.querySelector(".signin-btn").addEventListener("click", () => {
-    event.preventDefault();
+    document.querySelector(".signin-btn").addEventListener("click", () => {
+        event.preventDefault();
 
-    document.querySelector(".signin-btn").classList.add("hidden");
+        document.querySelector(".signin-btn").classList.add("hidden");
 
-    document.getElementById('email-form').removeEventListener('submit', signupListener);
-    displayMethod("email", "signin");
-});
+        document.getElementById('email-form').removeEventListener('submit', signupListener);
+        displayMethod("email", "signin");
+    });
 
-document.querySelector(".signup-btn").addEventListener("click", () => {
-    event.preventDefault();
+    document.querySelector(".signup-btn").addEventListener("click", () => {
+        event.preventDefault();
 
-    document.querySelector(".signup-btn").classList.add("hidden");
+        document.querySelector(".signup-btn").classList.add("hidden");
 
-    document.getElementById('email-form').removeEventListener('submit', signinListener);
-    displayMethod("email", "signup");
-});
+        document.getElementById('email-form').removeEventListener('submit', signinListener);
+        displayMethod("email", "signup");
+    });
+};
+init_buttons();
 
+/** 
+ * Displays the selected method. 
+ * @param {string} method   - The chosen method
+ * @param {string} action   - The chosen action
+ */
 function displayMethod(method, action) {
     console.log("Hiding methods...");
     // hides available methods
@@ -73,6 +88,42 @@ function displayMethod(method, action) {
     }
 }
 
+/** 
+ * Update firebase profile.
+ * @param {string} username     - User's desired username
+ * @param {string} photoURL     - User's desired photo URL
+ * @param {user} user           - firebase user object
+ * @param {string} firstName    - User's first name
+ * @param {string} lastName     - User's last name
+ * @param {string} email        - User's email
+ */
+let update_firebase_profile = function(username, photoURL, user, 
+    firstName, lastName, email
+)   {
+    // Update Firebase profile
+    updateProfile(auth.currentUser, {
+        displayName: username, // or use displayName if you prefer
+        photoURL: photoURL
+    }).then(() => {
+        // Save to Firestore
+        const userRef = doc(db, "users", user.uid);
+        return setDoc(userRef, {
+            username: username,
+            first: firstName,
+            last: lastName,
+            email: email,
+            photoURL: photoURL,
+            provider: "google",
+            createdAt: new Date()
+        });
+    }).then(() => {
+        console.log("Google user data saved to Firestore");
+        window.location.assign("main.html");
+    }).catch((error) => {
+        console.error("Error saving Google user data:", error);
+    });
+}
+/** Handle google popup login. */
 let googleLogin = function() {
     console.log("Chosen provider is Google. Opening popup...")
     signInWithPopup(auth, google)
@@ -97,28 +148,8 @@ let googleLogin = function() {
         // Generate username from email
         const username = email.split('@')[0];
         
-        // Update Firebase profile
-        updateProfile(auth.currentUser, {
-            displayName: username, // or use displayName if you prefer
-            photoURL: photoURL
-        }).then(() => {
-            // Save to Firestore
-            const userRef = doc(db, "users", user.uid);
-            return setDoc(userRef, {
-                username: username,
-                first: firstName,
-                last: lastName,
-                email: email,
-                photoURL: photoURL,
-                provider: "google",
-                createdAt: new Date()
-            });
-        }).then(() => {
-            console.log("Google user data saved to Firestore");
-            window.location.assign("main.html");
-        }).catch((error) => {
-            console.error("Error saving Google user data:", error);
-        });
+        update_firebase_profile(username, photoURL, user, firstName, lastName, email);
+
     }).catch((error) => {
         console.error("Google sign-in error:", error);
         // Optionally: go back to methods selection
