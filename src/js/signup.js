@@ -158,40 +158,56 @@ let googleLogin = function() {
     });
 }
 
+/** Prepares the email signin form. */
+function prepare_email_signin() {
+    let form = document.getElementById("form-container");
+    form.classList.remove("hidden");
+
+    document.getElementById("form-header").innerHTML = "Sign IN";
+    document.getElementById("email-form").classList.remove("hidden");
+
+    document.querySelector(".signup-btn").classList.remove("hidden");
+
+    document.querySelector(".back-btn").classList.remove("hidden");
+
+    document.getElementById('email-form').addEventListener('submit', signinListener);
+};
+
+/** Prepares the email signup form. */
+function prepare_email_signup() {
+    let form = document.getElementById("form-container");
+    form.classList.remove("hidden");
+
+    document.getElementById("form-header").innerHTML = "Sign UP";
+    document.getElementById("email-form").classList.remove("hidden");
+
+    document.querySelector(".signin-btn").classList.remove("hidden");
+
+    document.querySelector(".back-btn").classList.remove("hidden");
+
+    document.getElementById('email-form').addEventListener('submit', signupListener);
+};
+
+/**
+ * Handles login with email method.
+ * @param {string} action   - Chosen email login action.
+ */
 let emailLogin = function(action) {
-    console.log("Chosen email.")
-        // shows selected method container
-        if (action == "signin") {
-            console.log("Preparing email signin...");
-
-            let form = document.getElementById("form-container");
-            form.classList.remove("hidden");
-
-            document.getElementById("form-header").innerHTML = "Sign IN";
-            document.getElementById("email-form").classList.remove("hidden");
-
-            document.querySelector(".signup-btn").classList.remove("hidden");
-
-            document.querySelector(".back-btn").classList.remove("hidden");
-
-            document.getElementById('email-form').addEventListener('submit', signinListener);
-        } else if (action == "signup") {
-            console.log("Preparing email signup...");
-
-            let form = document.getElementById("form-container");
-            form.classList.remove("hidden");
-
-            document.getElementById("form-header").innerHTML = "Sign UP";
-            document.getElementById("email-form").classList.remove("hidden");
-
-            document.querySelector(".signin-btn").classList.remove("hidden");
-
-            document.querySelector(".back-btn").classList.remove("hidden");
-
-            document.getElementById('email-form').addEventListener('submit', signupListener);
-        } 
+    console.log("Chosen email method.")
+    // shows selected method container
+    if (action == "signin") {
+        console.log("Preparing email signin...");
+        prepare_email_signin();
+    } else if (action == "signup") {
+        console.log("Preparing email signup...");
+        prepare_email_signup();
+    } 
 }
 
+/**
+ * Read email and password and then sign in user.
+ * @param {event} event         - yeah idk
+ */
 let signinListener = function(event) {
     event.preventDefault(); // Prevent the default form submission (page reload)
 
@@ -202,6 +218,10 @@ let signinListener = function(event) {
     signIn(email, password); // Call the signUp function with email and password
 }
 
+/**
+ * Read email and password and then signup user.
+ * @param {event} event 
+ */
 let signupListener = function(event) {
     event.preventDefault(); // Prevent the default form submission (page reload)
   
@@ -212,7 +232,11 @@ let signupListener = function(event) {
     signUp(email, password); // Call the signUp function with email and password
 };
 
-
+/**
+ * create firebase user with firebase sdk
+ * @param {string} email 
+ * @param {string} password 
+ */
 function signUp(email, password) {
     createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
@@ -233,48 +257,27 @@ function signUp(email, password) {
 
             const username = document.getElementById('username').value;
             console.log("Username entered:", username);
-            updateProfile(auth.currentUser, {
-                displayName: username,
-            }).then(() => {
-                console.log("Username set to: ", auth.currentUser.displayName);
-            }).catch((error) => {
-                console.error("Error updating profile:", error);
-            });
 
             let name = document.getElementById('name').value;
             let surname = document.getElementById('surname').value;
 
             console.log("Name:", name, "Surname:", surname);
 
-            console.log("User UID:", user.uid);
-            const strinf = String(user.uid);
-            const userRef = doc(db, "users", strinf);
-
-            // Add user details to Firestore
-            setDoc(userRef, {
-                first: name,
-                last: surname,
-            })
-            .then((userRef) => {
-                console.log("Document written with ID: ", user.uid);
-                window.location.assign("main.html");
-            })
-            .catch((error) => {
-                console.error("Error adding document: ", error);
-            });
-        
-        // ...
+            update_firebase_profile(username, null, user, name, surname, email);
         });
     })
     .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.error("Error code:", errorCode, "Error message:", errorMessage);
-    // ..
     });
 };
 
-
+/**
+ * Sign in user using firebase sdk.
+ * @param {string} email 
+ * @param {string} password 
+ */
 function signIn(email, password) {
     signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
