@@ -29,25 +29,25 @@ const google = new GoogleAuthProvider();
 const db = getFirestore(app);
 console.log("Firestore initialized:", db.app.options.projectId);
 
-
 /** hides the loading text when everything is loaded and displays the methods container */
 let stop_loading_screen = function() {
     document.querySelector(".loading").classList.add("hidden");
     document.querySelector(".methods-container").classList.remove("hidden");
 };
-
+/** Starts the loading screen. */
 let loading_screen = function() {
     document.querySelector(".loading").classList.remove("hidden");
     document.querySelector(".methods-container").classList.add("hidden");
 }
-// Handle the redirect result
+/**
+ * Check for redirect and handle
+ * @param {auth} auth   - initialized firebase auth object
+ */
 getRedirectResult(auth)
     .then((result) => {
-        console.log("Result of redirect: ");
-        console.log(result);
-        console.log(auth.currentUser);
-        console.log(auth);
+        console.log("Page loading... Checking for any redirects...")
         if (result) {
+            console.log("Redirect detected.")
             const user = result.user;
             console.log("Google user signed in:", user);
             
@@ -70,7 +70,7 @@ getRedirectResult(auth)
             
             update_firebase_profile(username, photoURL, user, firstName, lastName, email);
         } else {
-            console.log("No redirect.");
+            console.log("No redirect. Continue normally...");
             stop_loading_screen();
         }
     })
@@ -96,12 +96,14 @@ init_methods_form();
 
 /** Initialize all buttons with their event handlers. */
 let init_buttons = function() {
+    // button that takes the user back
     document.querySelector(".back-btn").addEventListener("click", () => {
         event.preventDefault();
 
         window.location.reload();
     });
 
+    // button that switches the action to sign in
     document.querySelector(".signin-btn").addEventListener("click", () => {
         event.preventDefault();
 
@@ -111,6 +113,7 @@ let init_buttons = function() {
         displayMethod("email", "signin");
     });
 
+    // button that switches the action to sign up
     document.querySelector(".signup-btn").addEventListener("click", () => {
         event.preventDefault();
 

@@ -14,5 +14,5 @@ let test_btns = document.querySelectorAll(".test-btn");
 for (let i = 0; i < test_btns.length; i++) {
     test_btns[i].addEventListener("click", function() {
         test_handler(i)
-});
+    });
 }
