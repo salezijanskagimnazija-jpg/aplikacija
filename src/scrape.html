@@ -4,194 +4,476 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
-    <script>
+    <h1>Programi</h1>
+    <div>
+        <ul>
+            <li>
+                <select id="VrstaUcilista">
+                    <option value="-1">Sve vrste visokih ucilista</option>
+                    <option value="1">Javna sveucilista</option>
+                    <option value="2">Javna veleucilista</option>
+                    <option value="3">Javne visoke skole</option>
+                    <option value="4">Privatna sveucilista</option>
+                    <option value="5">Privatne veleucilista</option>
+                    <option value="6">Privatne visoke skole</option>
+                </select>
+
+                <select id="Ucilista">
+                    <option value="-1">Sva visoka učilišta</option>
+                    <option value="74">EFFECTUS veleučilište</option>
+                    <option value="68">Evanđeosko teološko veleučilište</option>
+                    <option value="12">Hrvatsko katoličko sveučilište u Zagrebu</option>
+                    <option value="48">Istarsko veleučilište</option>
+                    <option value="1">Libertas Međunarodno sveučilište</option>
+                    <option value="13">Međimursko veleučilište u Čakovcu</option>
+                    <option value="88">MUP - Veleučilište kriminalistike i javne sigurnosti</option>
+                    <option value="67">Poslovno veleučilište Zagreb</option>
+                    <option value="10">RIT Croatia</option>
+                    <option value="86">Sveučilište Algebra Bernays</option>
+                    <option value="2">Sveučilište Josipa Jurja Strossmayera u Osijeku</option>
+                    <option value="3">Sveučilište Jurja Dobrile u Puli</option>
+                    <option value="85">Sveučilište obrane i sigurnosti &quot;Dr. Franjo Tuđman&quot;</option>
+                    <option value="25">Sveučilište Sjever</option>
+                    <option value="4">Sveučilište u Dubrovniku</option>
+                    <option value="5">Sveučilište u Rijeci</option>
+                    <option value="72">Sveučilište u Slavonskom Brodu</option>
+                    <option value="6">Sveučilište u Splitu</option>
+                    <option value="7">Sveučilište u Zadru</option>
+                    <option value="8">Sveučilište u Zagrebu</option>
+                    <option value="70">Sveučilište VERN</option>
+                    <option value="16">Tehničko veleučilište u Zagrebu</option>
+                    <option value="17">Veleučilište &quot;Lavoslav Ružička&quot; u Vukovaru</option>
+                    <option value="18">Veleučilište &quot;Marko Marulić&quot; u Kninu</option>
+                    <option value="19">Veleučilište &quot;Nikola Tesla&quot; u Gospiću</option>
+                    <option value="87">Veleučilište Algebra Bernays</option>
+                    <option value="59">Veleučilište ARCA</option>
+                    <option value="79">Veleučilište Aspira</option>
+                    <option value="36">Veleučilište Hrvatsko zagorje Krapina</option>
+                    <option value="76">Veleučilište Ivanić-Grad</option>
+                    <option value="80">Veleučilište PAR</option>
+                    <option value="44">Veleučilište s pravom javnosti BALTAZAR ZAPREŠIĆ</option>
+                    <option value="46">Veleučilište studija sigurnosti</option>
+                    <option value="81">Veleučilište suvremenih informacijskih tehnologija</option>
+                    <option value="47">Veleučilište u Bjelovaru</option>
+                    <option value="20">Veleučilište u Karlovcu</option>
+                    <option value="78">Veleučilište u Križevcima</option>
+                    <option value="22">Veleučilište u Rijeci</option>
+                    <option value="24">Veleučilište u Šibeniku</option>
+                    <option value="42">Veleučilište u Virovitici</option>
+                    <option value="26">Veleučilište Velika Gorica</option>
+                    <option value="50">Zagrebačka škola ekonomije i managementa</option>
+                    <option value="52">Zdravstveno veleučilište u Zagrebu</option>
+
+                </select>
+                <select id="Sastavnice">
+                    <option value="-1">Sve sastavnice</option>
+                    <option value="67">Agronomski fakultet Sveučilišta u Zagrebu</option>
+                    <option value="71">Akademija dramske umjetnosti Sveučilišta u Zagrebu</option>
+                    <option value="70">Akademija likovnih umjetnosti Sveučilišta u Zagrebu</option>
+                    <option value="35">Akademija primijenjenih umjetnosti</option>
+                    <option value="249">Akademija za umjetnost i kulturu u Osijeku</option>
+                    <option value="56">Arhitektonski fakultet Sveučilišta u Zagrebu</option>
+                    <option value="261">Biotehnički odjel Sveučilišta u Slavonskom Brodu</option>
+                    <option value="51">Edukacijsko-rehabilitacijski fakultet Sveučilišta u Zagrebu</option>
+                    <option value="275">EFFECTUS veleučilište</option>
+                    <option value="206">Ekonomski fakultet Sveučilišta u Dubrovniku</option>
+                    <option value="10">Ekonomski fakultet Sveučilišta u Osijeku</option>
+                    <option value="31">Ekonomski fakultet Sveučilišta u Rijeci</option>
+                    <option value="38">Ekonomski fakultet Sveučilišta u Splitu</option>
+                    <option value="59">Ekonomski fakultet Sveučilišta u Zagrebu</option>
+                    <option value="251">Evanđeosko teološko veleučilište</option>
+                    <option value="11">Fakultet agrobiotehničkih znanosti Osijek</option>
+                    <option value="286">Fakultet biotehnologije i razvoja lijekova Sveučilišta u Rijeci</option>
+                    <option value="256">Fakultet dentalne medicine Sveučilišta u Rijeci</option>
+                    <option value="84">Fakultet ekonomije i turizma Dr. Mijo Mirković u Puli</option>
+                    <option value="205">Fakultet elektrotehnike i primijenjenog računarstva Sveučilišta u Dubrovniku</option>
+                    <option value="232">Fakultet elektrotehnike i računarstva i Fakultet strojarstva i brodogradnje Sveučilišta u Zagrebu</option>
+                    <option value="54">Fakultet elektrotehnike i računarstva Sveučilišta u Zagrebu</option>
+                    <option value="290">Fakultet elektrotehnike i računarstva, Fakultet kemijskog inženjerstva i tehnologije, Fakultet organizacije i informatike, Fakultet političkih znanosti, Fakultet prometnih znanosti, Filozofski fakultet, Geodetski fakultet, Građevinski fakultet, Pravni fakultet, Rudarsko-geološko-naftni fakultet Sveučilišta u Zagrebu</option>
+                    <option value="291">Fakultet elektrotehnike i računarstva, Fakultet organizacije i informatike, Fakultet političkih znanosti, Fakultet strojarstva i brodogradnje, Filozofski fakultet, Pravni fakultet Sveučilišta u Zagrebu</option>
+                    <option value="16">Fakultet elektrotehnike, računarstva i informacijskih tehnologija Osijek</option>
+                    <option value="37">Fakultet elektrotehnike, strojarstva i brodogradnje Sveučilišta u Splitu</option>
+                    <option value="73">Fakultet filozofije i religijskih znanosti</option>
+                    <option value="39">Fakultet građevinarstva, arhitekture i geodezije Sveučilišta u Splitu</option>
+                    <option value="108">Fakultet hrvatskih studija Sveučilišta u Zagrebu</option>
+                    <option value="269">Fakultet informatike i digitalnih tehnologija Sveučilišta u Rijeci</option>
+                    <option value="242">Fakultet informatike u Puli</option>
+                    <option value="103">Fakultet kemijskog inženjerstva i tehnologije Sveučilišta u Zagrebu</option>
+                    <option value="53">Fakultet organizacije i informatike u Varaždinu Sveučilišta u Zagrebu</option>
+                    <option value="52">Fakultet političkih znanosti Sveučilišta u Zagrebu</option>
+                    <option value="278">Fakultet primijenjene matematike i informatike</option>
+                    <option value="240">Fakultet prirodnih znanosti u Puli</option>
+                    <option value="105">Fakultet prometnih znanosti Sveučilišta u Zagrebu</option>
+                    <option value="63">Fakultet strojarstva i brodogradnje Sveučilišta u Zagrebu</option>
+                    <option value="267">Fakultet šumarstva i drvne tehnologije</option>
+                    <option value="272">Fakultet turizma i ruralnog razvoja u Požegi Sveučilišta u Osijeku</option>
+                    <option value="89">Fakultet za  menadžment u turizmu i ugostiteljstvu Sveučilišta u Rijeci</option>
+                    <option value="243">Fakultet za dentalnu medicinu i zdravstvo Osijek</option>
+                    <option value="271">Fakultet za fiziku Sveučilišta u Rijeci</option>
+                    <option value="293">Fakultet za forenzičke znanosti </option>
+                    <option value="270">Fakultet za matematiku Sveučilišta u Rijeci</option>
+                    <option value="225">Fakultet za medije i odnose s javnošću Sveučilišta u Dubrovniku</option>
+                    <option value="83">Fakultet za odgojne i obrazovne znanosti Sveučilišta u Osijeku</option>
+                    <option value="237">Fakultet za odgojne i obrazovne znanosti u Puli</option>
+                    <option value="230">Fakultet zdravstvenih studija Sveučilišta u Rijeci</option>
+                    <option value="216">Fakultet zdravstvenih znanosti Sveučilišta u Splitu</option>
+                    <option value="106">Farmaceutsko-biokemijski fakultet Sveučilišta u Zagrebu</option>
+                    <option value="13">Filozofski fakultet Sveučilišta u Osijeku</option>
+                    <option value="28">Filozofski fakultet Sveučilišta u Rijeci</option>
+                    <option value="66">Filozofski fakultet Sveučilišta u Zagrebu</option>
+                    <option value="23">Filozofski fakultet u Puli</option>
+                    <option value="44">Filozofski fakultet u Splitu</option>
+                    <option value="50">Geodetski fakultet Sveučilišta u Zagrebu</option>
+                    <option value="107">Geotehnički fakultet Sveučilišta u Zagrebu</option>
+                    <option value="32">Građevinski fakultet Sveučilišta u Rijeci</option>
+                    <option value="61">Građevinski fakultet Sveučilišta u Zagrebu</option>
+                    <option value="14">Građevinski i arhitektonski fakultet Sveučilišta u Osijeku</option>
+                    <option value="65">Grafički fakultet Sveučilišta u Zagrebu</option>
+                    <option value="77">Hrvatsko katoličko sveučilište u Zagrebu</option>
+                    <option value="148">Istarsko veleučilište</option>
+                    <option value="47">Katolički bogoslovni fakultet Sveučilišta u Splitu</option>
+                    <option value="69">Katolički bogoslovni fakultet Sveučilišta u Zagrebu</option>
+                    <option value="80">Katolički bogoslovni fakultet u Đakovu Sveučilišta u Osijeku</option>
+                    <option value="36">Kemijsko-tehnološki fakultet Sveučilišta u Splitu</option>
+                    <option value="263">Kineziološki fakultet Sveučilišta u Osijeku</option>
+                    <option value="95">Kineziološki fakultet Sveučilišta u Splitu</option>
+                    <option value="109">Kineziološki fakultet Sveučilišta u Zagrebu</option>
+                    <option value="9">Libertas Međunarodno sveučilište</option>
+                    <option value="268">Medicinski fakultet i Fakultet biotehnologije i razvoja lijekova Sveučilišta u Rijeci</option>
+                    <option value="210">Medicinski fakultet i Kemijsko-tehnološki fakultet Sveučilišta u Splitu</option>
+                    <option value="274">Medicinski fakultet Osijek i Prehrambeno-tehnološki fakultet Sveučilišta u Osijeku</option>
+                    <option value="81">Medicinski fakultet Sveučilišta u Osijeku</option>
+                    <option value="29">Medicinski fakultet Sveučilišta u Rijeci</option>
+                    <option value="96">Medicinski fakultet Sveučilišta u Splitu</option>
+                    <option value="110">Medicinski fakultet Sveučilišta u Zagrebu</option>
+                    <option value="265">Medicinski fakultet u Puli</option>
+                    <option value="78">Međimursko veleučilište u Čakovcu</option>
+                    <option value="64">Metalurški fakultet Sveučilišta u Zagrebu</option>
+                    <option value="294">MUP - Veleučilište kirminalistike i javne sigurnosti</option>
+                    <option value="72">Muzička akademija Sveučilišta u Zagrebu</option>
+                    <option value="85">Muzička akademija u Puli</option>
+                    <option value="262">Odjel društveno-humanističkih znanosti Sveučilišta u Slavonskom Brodu</option>
+                    <option value="183">Odjel za anglistiku Sveučilišta u Zadru</option>
+                    <option value="181">Odjel za arheologiju Sveučilišta u Zadru</option>
+                    <option value="21">Odjel za biologiju Sveučilišta u Osijeku</option>
+                    <option value="215">Odjel za ekologiju, agronomiju i akvakulturu Sveučilišta u Zadru</option>
+                    <option value="192">Odjel za ekonomiju Sveučilišta u Zadru</option>
+                    <option value="184">Odjel za etnologiju i antropologiju Sveučilišta u Zadru</option>
+                    <option value="185">Odjel za filozofiju Sveučilišta u Zadru</option>
+                    <option value="20">Odjel za fiziku Sveučilišta u Osijeku</option>
+                    <option value="186">Odjel za francuske i frankofonske studije Sveučilišta u Zadru</option>
+                    <option value="187">Odjel za geografiju Sveučilišta u Zadru</option>
+                    <option value="193">Odjel za germanistiku Sveučilišta u Zadru</option>
+                    <option value="255">Odjel za hispanistiku i iberske studije Sveučilišta u Zadru</option>
+                    <option value="231">Odjel za humanističke znanosti Sveučilišta u Dubrovniku i Filozofski fakultet Sveučilišta u Zagrebu</option>
+                    <option value="190">Odjel za informacijske znanosti i tehnologije Sveučilišta u Zadru</option>
+                    <option value="180">Odjel za izobrazbu učitelja i odgojitelja Sveučilišta u Zadru</option>
+                    <option value="22">Odjel za kemiju Sveučilišta u Osijeku</option>
+                    <option value="188">Odjel za klasičnu filologiju Sveučilišta u Zadru</option>
+                    <option value="189">Odjel za kroatistiku Sveučilišta u Zadru</option>
+                    <option value="247">Odjel za lingvistiku Sveučilišta u Zadru</option>
+                    <option value="220">Odjel za nastavničke studije u Gospiću</option>
+                    <option value="194">Odjel za pedagogiju Sveučilišta u Zadru</option>
+                    <option value="195">Odjel za povijest Sveučilišta u Zadru</option>
+                    <option value="196">Odjel za povijest umjetnosti Sveučilišta u Zadru</option>
+                    <option value="191">Odjel za primijenjene komunikacijske znanosti Sveučilišta u Zadru</option>
+                    <option value="207">Odjel za primijenjenu ekologiju Sveučilišta u Dubrovniku</option>
+                    <option value="197">Odjel za psihologiju Sveučilišta u Zadru</option>
+                    <option value="254">Odjel za rusistiku Sveučilišta u Zadru</option>
+                    <option value="198">Odjel za sociologiju Sveučilišta u Zadru</option>
+                    <option value="201">Odjel za stručne studije Sveučilišta u Dubrovniku</option>
+                    <option value="199">Odjel za talijanistiku Sveučilišta u Zadru</option>
+                    <option value="202">Odjel za umjetnost i restauraciju Sveučilišta u Dubrovniku</option>
+                    <option value="200">Odjel za zdravstvene studije Sveučilišta u Zadru</option>
+                    <option value="203">Pomorski fakultet Sveučilišta u Dubrovniku</option>
+                    <option value="34">Pomorski fakultet Sveučilišta u Rijeci</option>
+                    <option value="40">Pomorski fakultet Sveučilišta u Splitu</option>
+                    <option value="182">Pomorski odjel Sveučilišta u Zadru</option>
+                    <option value="246">Poslovno veleučilište Zagreb</option>
+                    <option value="82">Pravni fakultet Sveučilišta u Osijeku</option>
+                    <option value="93">Pravni fakultet Sveučilišta u Rijeci</option>
+                    <option value="97">Pravni fakultet Sveučilišta u Splitu</option>
+                    <option value="58">Pravni fakultet Sveučilišta u Zagrebu</option>
+                    <option value="12">Prehrambeno tehnološki fakultet Sveučilišta u Osijeku</option>
+                    <option value="57">Prehrambeno-biotehnološki fakultet Sveučilišta u Zagrebu</option>
+                    <option value="98">Prirodoslovno-matematički fakultet Sveučilišta u Splitu</option>
+                    <option value="62">Prirodoslovno-matematički fakultet Sveučilišta u Zagrebu</option>
+                    <option value="75">RIT Croatia</option>
+                    <option value="68">Rudarsko-geološko-naftni fakultet Sveučilišta u Zagrebu</option>
+                    <option value="112">Stomatološki fakultet Sveučilišta u Zagrebu</option>
+                    <option value="264">Strojarski fakultet Sveučilišta u Slavonskom Brodu</option>
+                    <option value="218">Sveučilišni centar za protestantsku teologiju Matija Vlačić Ilirik</option>
+                    <option value="99">Sveučilišni odjel za stručne studije</option>
+                    <option value="100">Sveučilišni odjel za studije mora Sveučilišta u Splitu</option>
+                    <option value="288">Sveučilište Algebra Bernays</option>
+                    <option value="25">Sveučilište Jurja Dobrile u Puli</option>
+                    <option value="287">Sveučilište obrane i sigurnosti &quot;Dr. Franjo Tuđman&quot;</option>
+                    <option value="125">Sveučilište Sjever</option>
+                    <option value="223">Sveučilište u Rijeci</option>
+                    <option value="289">Sveučilište u Rijeci; Sveučilište u Maastrichtu, Nizozemska; Sveučilište „Carlos III”, Madrid, Kraljevina Španjolska; Sveučilište Istočne Finske, Republika Finska; Sveučilište na Cipru, Republika Cipar; Sveučilište u Antwerpenu, Kraljevina Belgija; Sveučilište u Essexu, Ujedinjeno Kraljevstvo Velike Britanije i Sjeverne Irske; Sveučilište „Nicolaus Copernicus” u Torunu, Republika Poljska; Sveučilište Sorbonne Nouvelle, Francuska Republika; Sveučilište u Bremenu, Savezna Republika Njemačka</option>
+                    <option value="48">Sveučilište u Splitu</option>
+                    <option value="49">Sveučilište u Zadru</option>
+                    <option value="258">Sveučilište VERN</option>
+                    <option value="30">Tehnički fakultet Sveučilišta u Rijeci</option>
+                    <option value="239">Tehnički fakultet u Puli</option>
+                    <option value="260">Tehnički odjel Sveučilišta u Slavonskom Brodu</option>
+                    <option value="116">Tehničko veleučilište u Zagrebu</option>
+                    <option value="113">Tekstilno-tehnološki fakultet Sveučilišta u Zagrebu</option>
+                    <option value="224">Teološko-katehetski odjel Sveučilišta u Zadru</option>
+                    <option value="94">Učiteljski fakultet Sveučilišta u Rijeci</option>
+                    <option value="114">Učiteljski fakultet Sveučilišta u Zagrebu</option>
+                    <option value="42">Umjetnička akademija Sveučilišta u Splitu</option>
+                    <option value="101">Umjetnička akademija Sveučilišta u Splitu i PMF Sveučilišta u Splitu</option>
+                    <option value="117">Veleučilište &quot;Lavoslav Ružička&quot; u Vukovaru</option>
+                    <option value="118">Veleučilište &quot;Marko Marulić&quot; u Kninu</option>
+                    <option value="119">Veleučilište &quot;Nikola Tesla&quot; u Gospiću</option>
+                    <option value="292">Veleučilište Algebra Bernays</option>
+                    <option value="213">Veleučilište ARCA</option>
+                    <option value="280">Veleučilište Aspira</option>
+                    <option value="136">Veleučilište Hrvatsko zagorje Krapina</option>
+                    <option value="277">Veleučilište Ivanić-Grad</option>
+                    <option value="281">Veleučilište PAR</option>
+                    <option value="144">Veleučilište s pravom javnosti BALTAZAR ZAPREŠIĆ</option>
+                    <option value="146">Veleučilište studija sigurnosti</option>
+                    <option value="282">Veleučilište suvremenih informacijskih tehnologija</option>
+                    <option value="147">Veleučilište u Bjelovaru</option>
+                    <option value="120">Veleučilište u Karlovcu</option>
+                    <option value="279">Veleučilište u Križevcima</option>
+                    <option value="122">Veleučilište u Rijeci</option>
+                    <option value="124">Veleučilište u Šibeniku</option>
+                    <option value="142">Veleučilište u Virovitici</option>
+                    <option value="126">Veleučilište Velika Gorica</option>
+                    <option value="115">Veterinarski fakultet Sveučilišta u Zagrebu</option>
+                    <option value="150">Zagrebačka škola ekonomije i managementa</option>
+                    <option value="152">Zdravstveno veleučilište u Zagrebu</option>
+                </select>
+
+                <select id="Mjesto">
+                    <option value="-1">Sva mjesta</option>
+                    <option value="Biograd na Moru">Biograd na Moru</option>
+                    <option value="Bjelovar">Bjelovar</option>
+                    <option value="Čakovec">Čakovec</option>
+                    <option value="Dubrovnik">Dubrovnik</option>
+                    <option value="Đakovo">Đakovo</option>
+                    <option value="Đurđevac">Đurđevac</option>
+                    <option value="Gospić">Gospić</option>
+                    <option value="Ivanić-Grad">Ivanić-Grad</option>
+                    <option value="Karlovac">Karlovac</option>
+                    <option value="Knin">Knin</option>
+                    <option value="Koprivnica">Koprivnica</option>
+                    <option value="Krapina">Krapina</option>
+                    <option value="Križevci">Križevci</option>
+                    <option value="Kutina">Kutina</option>
+                    <option value="Makarska">Makarska</option>
+                    <option value="Nova Gradiška">Nova Gradiška</option>
+                    <option value="Opatija">Opatija</option>
+                    <option value="Orahovica">Orahovica</option>
+                    <option value="Osijek">Osijek</option>
+                    <option value="Pazin">Pazin</option>
+                    <option value="Petrinja">Petrinja</option>
+                    <option value="Poreč">Poreč</option>
+                    <option value="Požega">Požega</option>
+                    <option value="Pregrada">Pregrada</option>
+                    <option value="Pula">Pula</option>
+                    <option value="Rijeka">Rijeka</option>
+                    <option value="Sisak">Sisak</option>
+                    <option value="Slatina">Slatina</option>
+                    <option value="Slavonski Brod">Slavonski Brod</option>
+                    <option value="Split">Split</option>
+                    <option value="Šibenik">Šibenik</option>
+                    <option value="Varaždin">Varaždin</option>
+                    <option value="Velika Gorica">Velika Gorica</option>
+                    <option value="Vinkovci">Vinkovci</option>
+                    <option value="Virovitica">Virovitica</option>
+                    <option value="Vukovar">Vukovar</option>
+                    <option value="Zabok">Zabok</option>
+                    <option value="Zadar">Zadar</option>
+                    <option value="Zagreb">Zagreb</option>
+                    <option value="Zaprešić">Zaprešić</option>
+                </select>
+
+                <select id="podrucje">
+                    <option selected="selected" value="-1">Sva područja</option>
+                    <option value="9">Arhitektura</option>
+                    <option value="4">Biomedicina i zdravstvo</option>
+                    <option value="6">Biotehničke znanosti</option>
+                    <option value="10">Dizajn</option>
+                    <option value="1">Društvene znanosti</option>
+                    <option value="11">Filmska umjetnost (filmske, elektroničke i medijske umjetnosti pokretnih slika)</option>
+                    <option value="12">Glazbena umjetnost</option>
+                    <option value="3">Humanističke znanosti</option>
+                    <option value="13">Interdisciplinarno umjetničko područje</option>
+                    <option value="8">Interdisciplinarno znanstveno područje</option>
+                    <option value="14">Kazališna umjetnost (scenske i medijske umjetnosti)</option>
+                    <option value="15">Književnost</option>
+                    <option value="16">Likovne umjetnosti</option>
+                    <option value="17">Plesna umjetnost i umjetnost pokreta</option>
+                    <option value="18">Primijenjena umjetnost</option>
+                    <option value="5">Prirodne znanosti</option>
+                    <option value="2">Tehničke znanosti</option>
+                    <option value="19">Umjetničko interdisciplinarno područje znanosti i umjetnosti</option>
+                </select>
+
+                <select id="polja">
+                    <option value="-1">Sva polja</option>
+                    <option value="104">Animirani film</option>
+                    <option value="92">Animirani film (režija)</option>
+                    <option value="42">Arheologija</option>
+                    <option value="130">Arhitektonsko projektiranje (umjetnički dio)</option>
+                    <option value="38">Arhitektura i urbanizam</option>
+                    <option value="76">Bez polja</option>
+                    <option value="140">Bez polja</option>
+                    <option value="141">Bez polja</option>
+                    <option value="14">Biologija</option>
+                    <option value="80">Biologija, Kemija</option>
+                    <option value="55">Biotehnologija</option>
+                    <option value="36">Brodogradnja</option>
+                    <option value="70">Demografija</option>
+                    <option value="63">Dentalna medicina</option>
+                    <option value="72">Dizajn</option>
+                    <option value="136">Dizajn interakcija</option>
+                    <option value="137">Dizajn videoigara</option>
+                    <option value="133">Dizajn vizualnih komunikacija i primijenjena grafika</option>
+                    <option value="89">Dramaturgija izvedbe</option>
+                    <option value="88">Dramsko pismo</option>
+                    <option value="58">Drvna tehnologija</option>
+                    <option value="46">Edukacijsko-rehabilitacijske znanosti</option>
+                    <option value="1">Ekonomija</option>
+                    <option value="2">Elektrotehnika</option>
+                    <option value="43">Etnologija i antropologija</option>
+                    <option value="35">Farmacija</option>
+                    <option value="96">Filmska dramaturgija i scenarij</option>
+                    <option value="94">Filmska fotografija</option>
+                    <option value="118">Filmska i medijska produkcija</option>
+                    <option value="91">Filmska režija</option>
+                    <option value="41">Filmska umjetnost (filmske, elektroničke i medijske umjetnosti pokretnih slika)</option>
+                    <option value="4">Filologija</option>
+                    <option value="5">Filozofija</option>
+                    <option value="15">Fizika</option>
+                    <option value="81">Fizika, Kemija</option>
+                    <option value="111">Fotografija</option>
+                    <option value="50">Geodezija</option>
+                    <option value="67">Geofizika</option>
+                    <option value="56">Geografija</option>
+                    <option value="64">Geologija</option>
+                    <option value="119">Glazbena produkcija</option>
+                    <option value="22">Glazbena umjetnost</option>
+                    <option value="83">Gluma</option>
+                    <option value="90">Gluma</option>
+                    <option value="10">Građevinarstvo</option>
+                    <option value="51">Grafička tehnologija</option>
+                    <option value="101">Grafika</option>
+                    <option value="105">Ilustracija i strip</option>
+                    <option value="134">Industrijski dizajn i dizajn proizvoda</option>
+                    <option value="6">Informacijske i komunikacijske znanosti</option>
+                    <option value="73">Informacijske znanosti</option>
+                    <option value="69">Interdisciplinarne biotehničke znanosti</option>
+                    <option value="25">Interdisciplinarne društvene znanosti</option>
+                    <option value="31">Interdisciplinarne humanističke znanosti</option>
+                    <option value="26">Interdisciplinarne prirodne znanosti</option>
+                    <option value="32">Interdisciplinarne tehničke znanosti</option>
+                    <option value="66">Interdisciplinarno umjetničko polje</option>
+                    <option value="78">Izvođenje glazbe</option>
+                    <option value="100">Izvođenje glazbe - dirigiranje</option>
+                    <option value="99">Izvođenje glazbe - pjevanje</option>
+                    <option value="98">Izvođenje glazbe - sviranje (instrumenti)</option>
+                    <option value="27">Javno zdravstvo i zdravstvena zaštita</option>
+                    <option value="84">Kazališna režija</option>
+                    <option value="23">Kazališna umjetnost (scenske i medijske umjetnosti)</option>
+                    <option value="16">Kemija</option>
+                    <option value="39">Kemijsko inženjerstvo</option>
+                    <option value="40">Kineziologija</option>
+                    <option value="102">Kiparstvo</option>
+                    <option value="125">Klasični balet</option>
+                    <option value="13">Kliničke medicinske znanosti</option>
+                    <option value="139">Književno prevođenje</option>
+                    <option value="138">Književno stvaralaštvo (spisateljstvo)</option>
+                    <option value="79">Kognitivne znanosti</option>
+                    <option value="97">Kompozicija</option>
+                    <option value="74">Komunikacijske znanosti</option>
+                    <option value="123">Konzervacija i restauracija</option>
+                    <option value="110">Konzervacija i restauracija (umjetnički dio)</option>
+                    <option value="127">Koreografija</option>
+                    <option value="112">Kostimografija</option>
+                    <option value="124">Kreativne umjetničke terapije</option>
+                    <option value="52">Kroatologija</option>
+                    <option value="109">Likovna pedagogija</option>
+                    <option value="108">Likovna tehnologija (i reprodukcija)</option>
+                    <option value="28">Likovne umjetnosti</option>
+                    <option value="45">Logopedija</option>
+                    <option value="87">Lutkarstvo (lutkarska animacija i režija)</option>
+                    <option value="17">Matematika</option>
+                    <option value="82">Matematika, Fizika</option>
+                    <option value="53">Metalurgija</option>
+                    <option value="135">Modni dizajn i dizajn tekstila</option>
+                    <option value="95">Montaža</option>
+                    <option value="68">Nutricionizam</option>
+                    <option value="117">Oblikovanje i tehnologija lutke</option>
+                    <option value="116">Oblikovanje svjetla</option>
+                    <option value="114">Oblikovanje videa</option>
+                    <option value="115">Oblikovanje zvuka</option>
+                    <option value="77">Obrazovne znanosti</option>
+                    <option value="128">Pantomima</option>
+                    <option value="7">Pedagogija</option>
+                    <option value="132">Pejzažna arhitektura (umjetnički dio)</option>
+                    <option value="65">Plesna umjetnost i umjetnost pokreta</option>
+                    <option value="48">Politologija</option>
+                    <option value="18">Poljoprivreda</option>
+                    <option value="8">Povijest</option>
+                    <option value="33">Povijest umjetnosti</option>
+                    <option value="19">Pravo</option>
+                    <option value="20">Prehrambena tehnologija</option>
+                    <option value="30">Primijenjena umjetnost</option>
+                    <option value="122">Primijenjene likovne umjetnosti</option>
+                    <option value="120">Produkcija scenskih i izvedbenih umjetnosti</option>
+                    <option value="121">Produkcija videoigara</option>
+                    <option value="9">Psihologija</option>
+                    <option value="3">Računarstvo</option>
+                    <option value="86">Radiofonska režija</option>
+                    <option value="71">Religijske znanosti </option>
+                    <option value="85">Režija glazbenih i scenskih formi</option>
+                    <option value="57">Rudarstvo, nafta i geološko inženjerstvo</option>
+                    <option value="113">Scenografija</option>
+                    <option value="129">Scensko kretanje</option>
+                    <option value="62">Sigurnosne i obrambene znanosti</option>
+                    <option value="103">Slikarstvo</option>
+                    <option value="93">Snimanje (filmsko i elektroničko)</option>
+                    <option value="54">Socijalne djelatnosti</option>
+                    <option value="37">Sociologija</option>
+                    <option value="21">Strojarstvo</option>
+                    <option value="126">Suvremeni ples</option>
+                    <option value="59">Šumarstvo</option>
+                    <option value="29">Tehnologija prometa i transport</option>
+                    <option value="60">Tekstilna tehnologija</option>
+                    <option value="12">Temeljne medicinske znanosti</option>
+                    <option value="47">Temeljne tehničke znanosti</option>
+                    <option value="11">Teologija</option>
+                    <option value="106">Umjetnost novih medija i umjetničkih praksi</option>
+                    <option value="131">Urbanističko projektiranje (umjetnički dio)</option>
+                    <option value="61">Veterinarska medicina</option>
+                    <option value="107">Vizualna umjetnost videoigara i virtualna stvarnost</option>
+                    <option value="24">Znanost o umjetnosti</option>
+                    <option value="49">Zrakoplovstvo, raketna i svemirska tehnika</option>
+                </select>
+            </li>
+        </ul>
+    </div>
+    <script type="module">
+        let ucilista = null;
+        fetch("./data/ucilista.json")
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                ucilista = data;
+                document.getElementById("VrstaUcilista").addEventListener("change", scrapePrograms);
+            });
+
         async function scrapePrograms() {
             const proxy = 'https://corsproxy.io/?url=';
             const url = "https://www.postani-student.hr/webservices/Pretraga.svc/PretraziPrograme";
             let payload = {
                 Mjesto: "Sva mjesta",
-                lista: [
-  "-1",
-  "67",
-  "71",
-  "70",
-  "35",
-  "249",
-  "56",
-  "261",
-  "51",
-  "275",
-  "206",
-  "10",
-  "31",
-  "38",
-  "59",
-  "251",
-  "11",
-  "286",
-  "256",
-  "84",
-  "205",
-  "232",
-  "54",
-  "290",
-  "291",
-  "16",
-  "37",
-  "73",
-  "39",
-  "108",
-  "269",
-  "242",
-  "103",
-  "53",
-  "52",
-  "278",
-  "240",
-  "105",
-  "63",
-  "267",
-  "272",
-  "89",
-  "243",
-  "271",
-  "293",
-  "270",
-  "225",
-  "83",
-  "237",
-  "230",
-  "216",
-  "106",
-  "13",
-  "28",
-  "66",
-  "23",
-  "44",
-  "50",
-  "107",
-  "32",
-  "61",
-  "14",
-  "65",
-  "77",
-  "148",
-  "47",
-  "69",
-  "80",
-  "36",
-  "263",
-  "95",
-  "109",
-  "9",
-  "268",
-  "210",
-  "274",
-  "81",
-  "29",
-  "96",
-  "110",
-  "265",
-  "78",
-  "64",
-  "294",
-  "72",
-  "85",
-  "262",
-  "183",
-  "181",
-  "21",
-  "215",
-  "192",
-  "184",
-  "185",
-  "20",
-  "186",
-  "187",
-  "193",
-  "255",
-  "231",
-  "190",
-  "180",
-  "22",
-  "188",
-  "189",
-  "247",
-  "220",
-  "194",
-  "195",
-  "196",
-  "191",
-  "207",
-  "197",
-  "254",
-  "198",
-  "201",
-  "199",
-  "202",
-  "200",
-  "203",
-  "34",
-  "40",
-  "182",
-  "246",
-  "82",
-  "93",
-  "97",
-  "58",
-  "12",
-  "57",
-  "98",
-  "62",
-  "75",
-  "68",
-  "112",
-  "264",
-  "218",
-  "99",
-  "100",
-  "288",
-  "25",
-  "287",
-  "125",
-  "223",
-  "289",
-  "48",
-  "49",
-  "258",
-  "30",
-  "239",
-  "260",
-  "116",
-  "113",
-  "224",
-  "94",
-  "114",
-  "42",
-  "101",
-  "117",
-  "118",
-  "119",
-  "292",
-  "213",
-  "280",
-  "136",
-  "277",
-  "281",
-  "144",
-  "146",
-  "282",
-  "147",
-  "120",
-  "279",
-  "122",
-  "124",
-  "142",
-  "126",
-  "115",
-  "150",
-  "152"
-],
+                lista: [],
                 page: 1,
                 podrucje: "-1",
                 polje: "-1",
@@ -211,16 +493,77 @@ const headers = {
     // Don't include cookies initially - try without first
     // 'Cookie': 'ASP.NET_SessionId=...' // Only add if request fails
 };
+            
 
-            axios.post(proxy + url, payload)
-            .then((response) => {
-                console.log(response.data);
-                
-            })
-            .then((error) => console.log(error));
+            let TotalPages = null;
+            try {
+                let vrsta = document.getElementById("VrstaUcilista").value;
+                console.log("Vrsta: ", vrsta);
+                if (vrsta == -1) {
+                    let index = 0;
+                    payload.lista[index++] = vrsta;
+                    for (let uciliste in ucilista) {
+                        let sastavnice = ucilista[uciliste].sastavnice;
+                        console.log(sastavnice);
+                        for (let sastavnica in sastavnice) {
+                            console.log(sastavnice[sastavnica]);
+                            payload.lista[index++] = sastavnice[sastavnica].id;
+                        }
+                    }
+                    console.log(payload.lista);
+                    let original_lista = ["-1","67","71","70","35","249","56","261","51","275","206","10","31","38","59","251","11","286","256","84","205","232","54","290","291","16","37","73","39","108","269","242","103","53","52","278","240","105","63","267","272","89","243","271","293","270","225","83","237","230","216","106","13","28","66","23","44","50","107","32","61","14","65","77","148","47","69","80","36","263","95","109","9","268","210","274","81","29","96","110","265","78","64","294","72","85","262","183","181","21","215","192","184","185","20","186","187","193","255","231","190","180","22","188","189","247","220","194","195","196","191","207","197","254","198","201","199","202","200","203","34","40","182","246","82","93","97","58","12","57","98","62","75","68","112","264","218","99","100","288","25","287","125","223","289","48","49","258","30","239","260","116","113","224","94","114","42","101","117","118","119","292","213","280","136","277","281","144","146","282","147","120","279","122","124","142","126","115","150","152"];
+                    
+                    const originalIds = new Set(original_lista);
+                    const ids = new Set(payload.lista);
+
+                    const missing = [...originalIds].filter(id => !ids.has(id));
+
+                    const extra = [...ids].filter(id => !originalIds.has(id));
+
+                    console.log("Missing: ", missing);
+                    console.log("Extra: ", extra)
+                    // for testing, since I get 93 pages, and they get 94
+                   // payload.lista = ["-1","67","71","70","35","249","56","261","51","275","206","10","31","38","59","251","11","286","256","84","205","232","54","290","291","16","37","73","39","108","269","242","103","53","52","278","240","105","63","267","272","89","243","271","293","270","225","83","237","230","216","106","13","28","66","23","44","50","107","32","61","14","65","77","148","47","69","80","36","263","95","109","9","268","210","274","81","29","96","110","265","78","64","294","72","85","262","183","181","21","215","192","184","185","20","186","187","193","255","231","190","180","22","188","189","247","220","194","195","196","191","207","197","254","198","201","199","202","200","203","34","40","182","246","82","93","97","58","12","57","98","62","75","68","112","264","218","99","100","288","25","287","125","223","289","48","49","258","30","239","260","116","113","224","94","114","42","101","117","118","119","292","213","280","136","277","281","144","146","282","147","120","279","122","124","142","126","115","150","152"]
+                    console.log(payload);
+                } else {
+                    let index = 0;
+                    payload.lista[index++] = "-1";
+                    let ucilista_vrsta = Object.fromEntries(
+                        Object.entries(ucilista).filter(([id, uciliste]) => uciliste.vrsta == vrsta)
+                    );
+                    console.log(ucilista_vrsta)
+                    for (let uciliste in ucilista_vrsta) {
+                        let sastavnice = ucilista[uciliste].sastavnice;
+                        console.log(sastavnice);
+                        for (let sastavnica in sastavnice) {
+                            console.log(sastavnice[sastavnica]);
+                            payload.lista[index++] = sastavnice[sastavnica].id;
+                        }
+                    }
+                    console.log(payload.lista);
+
+                    let original_lista = ["-1","275","251","148","246","75","292","213","280","277","281","144","146","282","147","126","150"];
+                    const originalIds = new Set(original_lista);
+                    const ids = new Set(payload.lista);
+
+                    const missing = [...originalIds].filter(id => !ids.has(id));
+
+                    const extra = [...ids].filter(id => !originalIds.has(id));
+
+                    console.log("Missing: ", missing);
+                    console.log("Extra: ", extra)
+                }
+                axios.post(proxy + url, payload)
+                .then((response) => {
+                    console.log("First request!")
+                    console.log(response.data);
+                    TotalPages = response.data.d.TotalPages;
+
+                })
+            } catch (error) {
+                console.log(error);
+            }
         }
-
-        scrapePrograms();
     </script>
 </body>
 </html>

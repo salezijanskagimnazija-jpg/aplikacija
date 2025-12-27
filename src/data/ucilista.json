@@ -1,0 +1,977 @@
+{
+  "74": {
+    "name": "EFFECTUS veleučilište",
+    "vrsta": 5,
+    "sastavnice": [
+      {
+        "id": "275",
+        "name": "EFFECTUS veleučilište"
+      }
+    ]
+  },
+  "68": {
+    "name": "Evanđeosko teološko veleučilište",
+    "vrsta": 5,
+    "sastavnice": [
+      {
+        "id": "251",
+        "name": "Evanđeosko teološko veleučilište"
+      }
+    ]
+  },
+  "12": {
+    "name": "Hrvatsko katoličko sveučilište u Zagrebu",
+    "vrsta": 4,
+    "sastavnice": [
+      {
+        "id": "77",
+        "name": "Hrvatsko katoličko sveučilište u Zagrebu"
+      }
+    ]
+  },
+  "48": {
+    "name": "Istarsko veleučilište",
+    "vrsta": 5,
+    "sastavnice": [
+      {
+        "id": "148",
+        "name": "Istarsko veleučilište"
+      }
+    ]
+  },
+  "1": {
+    "name": "Libertas Međunarodno sveučilište",
+    "vrsta": 4,
+    "sastavnice": [
+      {
+        "id": "9",
+        "name": "Libertas Međunarodno sveučilište"
+      }
+    ]
+  },
+  "13": {
+    "name": "Međimursko veleučilište u Čakovcu",
+    "vrsta": 2,
+    "sastavnice": [
+      {
+        "id": "78",
+        "name": "Međimursko veleučilište u Čakovcu"
+      }
+    ]
+  },
+  "88": {
+    "name": "MUP - Veleučilište kriminalistike i javne sigurnosti",
+    "vrsta": 2,
+    "sastavnice": [
+      {
+        "id": "294",
+        "name": "MUP - Veleučilište kirminalistike i javne sigurnosti"
+      }
+    ]
+  },
+  "67": {
+    "name": "Poslovno veleučilište Zagreb",
+    "vrsta": 5,
+    "sastavnice": [
+      {
+        "id": "246",
+        "name": "Poslovno veleučilište Zagreb"
+      }
+    ]
+  },
+  "10": {
+    "name": "RIT Croatia",
+    "vrsta": 5,
+    "sastavnice": [
+      {
+        "id": "75",
+        "name": "RIT Croatia"
+      }
+    ]
+  },
+  "86": {
+    "name": "Sveučilište Algebra Bernays",
+    "vrsta": 4,
+    "sastavnice": [
+      {
+        "id": "288",
+        "name": "Sveučilište Algebra Bernays"
+      }
+    ]
+  },
+  "2": {
+    "name": "Sveučilište Josipa Jurja Strossmayera u Osijeku",
+    "vrsta": 1,
+    "sastavnice": [
+      {
+        "id": "10",
+        "name": "Ekonomski fakultet Sveučilišta u Osijeku"
+      },
+      {
+        "id": "11",
+        "name": "Fakultet agrobiotehničkih znanosti Osijek"
+      },
+      {
+        "id": "12",
+        "name": "Prehrambeno tehnološki fakultet Sveučilišta u Osijeku"
+      },
+      {
+        "id": "13",
+        "name": "Filozofski fakultet Sveučilišta u Osijeku"
+      },
+      {
+        "id": "14",
+        "name": "Građevinski i arhitektonski fakultet Sveučilišta u Osijeku"
+      },
+      {
+        "id": "16",
+        "name": "Fakultet elektrotehnike, računarstva i informacijskih tehnologija Osijek"
+      },
+      {
+        "id": "20",
+        "name": "Odjel za fiziku Sveučilišta u Osijeku"
+      },
+      {
+        "id": "21",
+        "name": "Odjel za biologiju Sveučilišta u Osijeku"
+      },
+      {
+        "id": "22",
+        "name": "Odjel za kemiju Sveučilišta u Osijeku"
+      },
+      {
+        "id": "80",
+        "name": "Katolički bogoslovni fakultet u Đakovu Sveučilišta u Osijeku"
+      },
+      {
+        "id": "81",
+        "name": "Medicinski fakultet Sveučilišta u Osijeku"
+      },
+      {
+        "id": "82",
+        "name": "Pravni fakultet Sveučilišta u Osijeku"
+      },
+      {
+        "id": "83",
+        "name": "Fakultet za odgojne i obrazovne znanosti Sveučilišta u Osijeku"
+      },
+      {
+        "id": "243",
+        "name": "Fakultet za dentalnu medicinu i zdravstvo Osijek"
+      },
+      {
+        "id": "249",
+        "name": "Akademija za umjetnost i kulturu u Osijeku"
+      },
+      {
+        "id": "263",
+        "name": "Kineziološki fakultet Sveučilišta u Osijeku"
+      },
+      {
+        "id": "272",
+        "name": "Fakultet turizma i ruralnog razvoja u Požegi Sveučilišta u Osijeku"
+      },
+      {
+        "id": "274",
+        "name": "Medicinski fakultet Osijek i Prehrambeno-tehnološki fakultet Sveučilišta u Osijeku"
+      },
+      {
+        "id": "278",
+        "name": "Fakultet primijenjene matematike i informatike"
+      }
+    ]
+  },
+  "3": {
+    "name": "Sveučilište Jurja Dobrile u Puli",
+    "vrsta": 1,
+    "sastavnice": [
+      {
+        "id": "23",
+        "name": "Filozofski fakultet u Puli"
+      },
+      {
+        "id": "25",
+        "name": "Sveučilište Jurja Dobrile u Puli"
+      },
+      {
+        "id": "84",
+        "name": "Fakultet ekonomije i turizma Dr. Mijo Mirković u Puli"
+      },
+      {
+        "id": "85",
+        "name": "Muzička akademija u Puli"
+      },
+      {
+        "id": "237",
+        "name": "Fakultet za odgojne i obrazovne znanosti u Puli"
+      },
+      {
+        "id": "239",
+        "name": "Tehnički fakultet u Puli"
+      },
+      {
+        "id": "240",
+        "name": "Fakultet prirodnih znanosti u Puli"
+      },
+      {
+        "id": "242",
+        "name": "Fakultet informatike u Puli"
+      },
+      {
+        "id": "265",
+        "name": "Medicinski fakultet u Puli"
+      }
+    ]
+  },
+  "85": {
+    "name": "Sveučilište obrane i sigurnosti \"Dr. Franjo Tuđman\"",
+    "vrsta": 1,
+    "sastavnice": [
+      {
+        "id": "287",
+        "name": "Sveučilište obrane i sigurnosti \"Dr. Franjo Tuđman\""
+      },
+      {
+        "id": "290",
+        "name": "Fakultet elektrotehnike i računarstva, Fakultet kemijskog inženjerstva i tehnologije, Fakultet organizacije i informatike, Fakultet političkih znanosti, Fakultet prometnih znanosti, Filozofski fakultet, Geodetski fakultet, Građevinski fakultet, Pravni fakultet, Rudarsko-geološko-naftni fakultet Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "291",
+        "name": "Fakultet elektrotehnike i računarstva, Fakultet organizacije i informatike, Fakultet političkih znanosti, Fakultet strojarstva i brodogradnje, Filozofski fakultet, Pravni fakultet Sveučilišta u Zagrebu"
+      }
+    ]
+  },
+  "25": {
+    "name": "Sveučilište Sjever",
+    "vrsta": 1,
+    "sastavnice": [
+      {
+        "id": "125",
+        "name": "Sveučilište Sjever"
+      }
+    ]
+  },
+  "4": {
+    "name": "Sveučilište u Dubrovniku",
+    "vrsta": 1,
+    "sastavnice": [
+      {
+        "id": "201",
+        "name": "Odjel za stručne studije Sveučilišta u Dubrovniku"
+      },
+      {
+        "id": "202",
+        "name": "Odjel za umjetnost i restauraciju Sveučilišta u Dubrovniku"
+      },
+      {
+        "id": "203",
+        "name": "Pomorski fakultet Sveučilišta u Dubrovniku"
+      },
+      {
+        "id": "205",
+        "name": "Fakultet elektrotehnike i primijenjenog računarstva Sveučilišta u Dubrovniku"
+      },
+      {
+        "id": "206",
+        "name": "Ekonomski fakultet Sveučilišta u Dubrovniku"
+      },
+      {
+        "id": "207",
+        "name": "Odjel za primijenjenu ekologiju Sveučilišta u Dubrovniku"
+      },
+      {
+        "id": "225",
+        "name": "Fakultet za medije i odnose s javnošću Sveučilišta u Dubrovniku"
+      },
+      {
+        "id": "231",
+        "name": "Odjel za humanističke znanosti Sveučilišta u Dubrovniku i Filozofski fakultet Sveučilišta u Zagrebu"
+      }
+    ]
+  },
+  "5": {
+    "name": "Sveučilište u Rijeci",
+    "vrsta": 1,
+    "sastavnice": [
+      {
+        "id": "28",
+        "name": "Filozofski fakultet Sveučilišta u Rijeci"
+      },
+      {
+        "id": "29",
+        "name": "Medicinski fakultet Sveučilišta u Rijeci"
+      },
+      {
+        "id": "30",
+        "name": "Tehnički fakultet Sveučilišta u Rijeci"
+      },
+      {
+        "id": "31",
+        "name": "Ekonomski fakultet Sveučilišta u Rijeci"
+      },
+      {
+        "id": "32",
+        "name": "Građevinski fakultet Sveučilišta u Rijeci"
+      },
+      {
+        "id": "34",
+        "name": "Pomorski fakultet Sveučilišta u Rijeci"
+      },
+      {
+        "id": "35",
+        "name": "Akademija primjenjenih umjetnosti"
+      },
+      {
+        "id": "89",
+        "name": "Fakultet za menadžment u turizmu i ugostiteljstvu Sveučilišta u Rijeci"
+      },
+      {
+        "id": "93",
+        "name": "Pravni fakultet Sveučilišta u Rijeci"
+      },
+      {
+        "id": "94",
+        "name": "Učiteljski fakultet Sveučilišta u Rijeci"
+      },
+      {
+        "id": "223",
+        "name": "Sveučilište u Rijeci"
+      },
+      {
+        "id": "230",
+        "name": "Fakultet zdravstvenih studija Sveučilišta u Rijeci"
+      },
+      {
+        "id": "256",
+        "name": "Fakultet dentalne medicine Sveučilišta u Rijeci"
+      },
+      {
+        "id": "268",
+        "name": "Medicinski fakultet i Fakultet biotehnologije i razvoja lijekova Sveučilišta u Rijeci"
+      },
+      {
+        "id": "269",
+        "name": "Fakultet informatike i digitalnih tehnologija Sveučilišta u Rijeci"
+      },
+      {
+        "id": "270",
+        "name": "Fakultet za matematiku Sveučilišta u Rijeci"
+      },
+      {
+        "id": "271",
+        "name": "Fakultet za fiziku Sveučilišta u Rijeci"
+      },
+      {
+        "id": "286",
+        "name": "Fakultet biotehnologije i razvoja lijekova Sveučilišta u Rijeci"
+      },
+      {
+        "id": "289",
+        "name": "Sveučilište u Rijeci; Sveučilište u Maastrichtu, Nizozemska; Sveučilište „Carlos III”, Madrid, Kraljevina Španjolska; Sveučilište Istočne Finske, Republika Finska; Sveučilište na Cipru, Republika Cipar; Sveučilište u Antwerpenu, Kraljevina Belgija; Sveučilište u Essexu, Ujedinjeno Kraljevstvo Velike Britanije i Sjeverne Irske; Sveučilište „Nicolaus Copernicus” u Torunu, Republika Poljska; Sveučilište Sorbonne Nouvelle, Francuska Republika; Sveučilište u Bremenu, Savezna Republika Njemačka"
+      }
+    ]
+  },
+  "72": {
+    "name": "Sveučilište u Slavonskom Brodu",
+    "vrsta": 1,
+    "sastavnice": [
+      {
+        "id": "260",
+        "name": "Tehnički odjel Sveučilišta u Slavonskom Brodu"
+      },
+      {
+        "id": "261",
+        "name": "Biotehnički odjel Sveučilišta u Slavonskom Brodu"
+      },
+      {
+        "id": "262",
+        "name": "Odjel društveno-humanističkih znanosti Sveučilišta u Slavonskom Brodu"
+      },
+      {
+        "id": "264",
+        "name": "Strojarski fakultet Sveučilišta u Slavonskom Brodu"
+      }
+    ]
+  },
+  "6": {
+    "name": "Sveučilište u Splitu",
+    "vrsta": 1,
+    "sastavnice": [
+      {
+        "id": "36",
+        "name": "Kemijsko-tehnološki fakultet Sveučilišta u Splitu"
+      },
+      {
+        "id": "37",
+        "name": "Fakultet elektrotehnike, strojarstva i brodogradnje Sveučilišta u Splitu"
+      },
+      {
+        "id": "38",
+        "name": "Ekonomski fakultet Sveučilišta u Splitu"
+      },
+      {
+        "id": "39",
+        "name": "Fakultet građevinarstva, arhitekture i geodezije Sveučilišta u Splitu"
+      },
+      {
+        "id": "40",
+        "name": "Pomorski fakultet Sveučilišta u Splitu"
+      },
+      {
+        "id": "42",
+        "name": "Umjetnička akademija Sveučilišta u Splitu"
+      },
+      {
+        "id": "44",
+        "name": "Filozofski fakultet u Splitu"
+      },
+      {
+        "id": "47",
+        "name": "Katolički bogoslovni fakultet Sveučilišta u Splitu"
+      },
+      {
+        "id": "48",
+        "name": "Sveučilište u Splitu"
+      },
+      {
+        "id": "95",
+        "name": "Kineziološki fakultet Sveučilišta u Splitu"
+      },
+      {
+        "id": "96",
+        "name": "Medicinski fakultet Sveučilišta u Splitu"
+      },
+      {
+        "id": "97",
+        "name": "Pravni fakultet Sveučilišta u Splitu"
+      },
+      {
+        "id": "98",
+        "name": "Prirodoslovno-matematički fakultet Sveučilišta u Splitu"
+      },
+      {
+        "id": "99",
+        "name": "Sveučilišni odjel za stručne studije"
+      },
+      {
+        "id": "100",
+        "name": "Sveučilišni odjel za studije mora Sveučilišta u Splitu"
+      },
+      {
+        "id": "101",
+        "name": "Umjetnička akademija Sveučilišta u Splitu i PMF Sveučilišta u Splitu"
+      },
+      {
+        "id": "210",
+        "name": "Medicinski fakultet i Kemijsko-tehnološki fakultet Sveučilišta u Splitu"
+      },
+      {
+        "id": "216",
+        "name": "Fakultet zdravstvenih znanosti Sveučilišta u Splitu"
+      },
+      {
+        "id": "293",
+        "name": "Fakultet za forenzičke znanosti"
+      }
+    ]
+  },
+  "7": {
+    "name": "Sveučilište u Zadru",
+    "vrsta": 1,
+    "sastavnice": [
+      {
+        "id": "49",
+        "name": "Sveučilište u Zadru"
+      },
+      {
+        "id": "180",
+        "name": "Odjel za izobrazbu učitelja i odgojitelja Sveučilišta u Zadru"
+      },
+      {
+        "id": "181",
+        "name": "Odjel za arheologiju Sveučilišta u Zadru"
+      },
+      {
+        "id": "182",
+        "name": "Pomorski odjel Sveučilišta u Zadru"
+      },
+      {
+        "id": "183",
+        "name": "Odjel za anglistiku Sveučilišta u Zadru"
+      },
+      {
+        "id": "184",
+        "name": "Odjel za etnologiju i antropologiju Sveučilišta u Zadru"
+      },
+      {
+        "id": "185",
+        "name": "Odjel za filozofiju Sveučilišta u Zadru"
+      },
+      {
+        "id": "186",
+        "name": "Odjel za francuske i frankofonske studije Sveučilišta u Zadru"
+      },
+      {
+        "id": "187",
+        "name": "Odjel za geografiju Sveučilišta u Zadru"
+      },
+      {
+        "id": "188",
+        "name": "Odjel za klasičnu filologiju Sveučilišta u Zadru"
+      },
+      {
+        "id": "189",
+        "name": "Odjel za kroatistiku Sveučilišta u Zadru"
+      },
+      {
+        "id": "190",
+        "name": "Odjel za informacijske znanosti i tehnologije Sveučilišta u Zadru"
+      },
+      {
+        "id": "191",
+        "name": "Odjel za primijenjene komunikacijske znanosti Sveučilišta u Zadru"
+      },
+      {
+        "id": "192",
+        "name": "Odjel za ekonomiju Sveučilišta u Zadru"
+      },
+      {
+        "id": "193",
+        "name": "Odjel za germanistiku Sveučilišta u Zadru"
+      },
+      {
+        "id": "194",
+        "name": "Odjel za pedagogiju Sveučilišta u Zadru"
+      },
+      {
+        "id": "195",
+        "name": "Odjel za povijest Sveučilišta u Zadru"
+      },
+      {
+        "id": "196",
+        "name": "Odjel za povijest umjetnosti Sveučilišta u Zadru"
+      },
+      {
+        "id": "197",
+        "name": "Odjel za psihologiju Sveučilišta u Zadru"
+      },
+      {
+        "id": "198",
+        "name": "Odjel za sociologiju Sveučilišta u Zadru"
+      },
+      {
+        "id": "199",
+        "name": "Odjel za talijanistiku Sveučilišta u Zadru"
+      },
+      {
+        "id": "200",
+        "name": "Odjel za zdravstvene studije Sveučilišta u Zadru"
+      },
+      {
+        "id": "215",
+        "name": "Odjel za ekologiju, agronomiju i akvakulturu Sveučilišta u Zadru"
+      },
+      {
+        "id": "220",
+        "name": "Odjel za nastavničke studije u Gospiću"
+      },
+      {
+        "id": "224",
+        "name": "Teološko-katehetski odjel Sveučilišta u Zadru"
+      },
+      {
+        "id": "247",
+        "name": "Odjel za lingvistiku Sveučilišta u Zadru"
+      },
+      {
+        "id": "254",
+        "name": "Odjel za hispanistiku i iberske studije Sveučilišta u Zadru"
+      },
+      {
+        "id": "255",
+        "name": "Odjel za rusistiku Sveučilišta u Zadru"
+      }
+    ]
+  },
+  "8": {
+    "name": "Sveučilište u Zagrebu",
+    "vrsta": 1,
+    "sastavnice": [
+      {
+        "id": "50",
+        "name": "Geodetski fakultet Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "51",
+        "name": "Edukacijsko-rehabilitacijski fakultet Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "52",
+        "name": "Fakultet političkih znanosti Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "53",
+        "name": "Fakultet organizacije i informatike u Varaždinu Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "54",
+        "name": "Fakultet elektrotehnike i računarstva Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "56",
+        "name": "Arhitektonski fakultet Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "57",
+        "name": "Prehrambeno-biotehnološki fakultet Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "58",
+        "name": "Pravni fakultet Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "59",
+        "name": "Ekonomski fakultet Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "61",
+        "name": "Građevinski fakultet Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "62",
+        "name": "Prirodoslovno-matematički fakultet Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "63",
+        "name": "Fakultet strojarstva i brodogradnje Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "64",
+        "name": "Metalurški fakultet Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "65",
+        "name": "Grafički fakultet Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "66",
+        "name": "Filozofski fakultet Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "67",
+        "name": "Agronomski fakultet Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "68",
+        "name": "Rudarsko-geološko-naftni fakultet Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "69",
+        "name": "Katolički bogoslovni fakultet Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "70",
+        "name": "Akademija likovnih umjetnosti Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "71",
+        "name": "Akademija dramske umjetnosti Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "72",
+        "name": "Muzička akademija Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "73",
+        "name": "Fakultet filozofije i religijskih znanosti"
+      },
+      {
+        "id": "103",
+        "name": "Fakultet kemijskog inženjerstva i tehnologije Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "105",
+        "name": "Fakultet prometnih znanosti Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "106",
+        "name": "Farmaceutsko-biokemijski fakultet Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "107",
+        "name": "Geotehnički fakultet Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "108",
+        "name": "Fakultet hrvatskih studija Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "109",
+        "name": "Kineziološki fakultet Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "110",
+        "name": "Medicinski fakultet Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "112",
+        "name": "Stomatološki fakultet Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "113",
+        "name": "Tekstilno-tehnološki fakultet Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "114",
+        "name": "Učiteljski fakultet Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "115",
+        "name": "Veterinarski fakultet Sveučilišta u Zagrebu"
+      },
+      {
+    	"id": "218",
+        "name": "Sveučilišni centar za protestantsku teologiju Matija Vlačić Ilirik"
+
+      },
+      {
+        "id": "232",
+        "name": "Fakultet elektrotehnike i računarstva i Fakultet strojarstva i brodogradnje Sveučilišta u Zagrebu"
+      },
+      {
+        "id": "267",
+        "name": "Fakultet šumarstva i drvne tehnologije"
+      }
+    ]
+  },
+  "70": {
+    "name": "Sveučilište VERN",
+    "vrsta": 4,
+    "sastavnice": [
+      {
+        "id": "258",
+        "name": "Sveučilište VERN"
+      }
+    ]
+  },
+  "16": {
+    "name": "Tehničko veleučilište u Zagrebu",
+    "vrsta": 2,
+    "sastavnice": [
+      {
+        "id": "116",
+        "name": "Tehničko veleučilište u Zagrebu"
+      }
+    ]
+  },
+  "17": {
+    "name": "Veleučilište \"Lavoslav Ružička\" u Vukovaru",
+    "vrsta": 2,
+    "sastavnice": [
+      {
+        "id": "117",
+        "name": "Veleučilište \"Lavoslav Ružička\" u Vukovaru"
+      }
+    ]
+  },
+  "18": {
+    "name": "Veleučilište \"Marko Marulić\" u Kninu",
+    "vrsta": 2,
+    "sastavnice": [
+      {
+        "id": "118",
+        "name": "Veleučilište \"Marko Marulić\" u Kninu"
+      }
+    ]
+  },
+  "19": {
+    "name": "Veleučilište \"Nikola Tesla\" u Gospiću",
+    "vrsta": 2,
+    "sastavnice": [
+      {
+        "id": "119",
+        "name": "Veleučilište \"Nikola Tesla\" u Gospiću"
+      }
+    ]
+  },
+  "87": {
+    "name": "Veleučilište Algebra Bernays",
+    "vrsta": 5,
+    "sastavnice": [
+      {
+        "id": "292",
+        "name": "Veleučilište Algebra Bernays"
+      }
+    ]
+  },
+  "59": {
+    "name": "Veleučilište ARCA",
+    "vrsta": 5,
+    "sastavnice": [
+      {
+        "id": "213",
+        "name": "Veleučilište ARCA"
+      }
+    ]
+  },
+  "79": {
+    "name": "Veleučilište Aspira",
+    "vrsta": 5,
+    "sastavnice": [
+      {
+        "id": "280",
+        "name": "Veleučilište Aspira"
+      }
+    ]
+  },
+  "36": {
+    "name": "Veleučilište Hrvatsko zagorje Krapina",
+    "vrsta": 2,
+    "sastavnice": [
+      {
+        "id": "136",
+        "name": "Veleučilište Hrvatsko zagorje Krapina"
+      }
+    ]
+  },
+  "76": {
+    "name": "Veleučilište Ivanić-Grad",
+    "vrsta": 5,
+    "sastavnice": [
+      {
+        "id": "277",
+        "name": "Veleučilište Ivanić-Grad"
+      }
+    ]
+  },
+  "80": {
+    "name": "Veleučilište PAR",
+    "vrsta": 5,
+    "sastavnice": [
+      {
+        "id": "281",
+        "name": "Veleučilište PAR"
+      }
+    ]
+  },
+  "44": {
+    "name": "Veleučilište s pravom javnosti BALTAZAR ZAPREŠIĆ",
+    "vrsta": 5,
+    "sastavnice": [
+      {
+        "id": "144",
+        "name": "Veleučilište s pravom javnosti BALTAZAR ZAPREŠIĆ"
+      }
+    ]
+  },
+  "46": {
+    "name": "Veleučilište studija sigurnosti",
+    "vrsta": 5,
+    "sastavnice": [
+      {
+        "id": "146",
+        "name": "Veleučilište studija sigurnosti"
+      }
+    ]
+  },
+  "81": {
+    "name": "Veleučilište suvremenih informacijskih tehnologija",
+    "vrsta": 5,
+    "sastavnice": [
+      {
+        "id": "282",
+        "name": "Veleučilište suvremenih informacijskih tehnologija"
+      }
+    ]
+  },
+  "47": {
+    "name": "Veleučilište u Bjelovaru",
+    "vrsta": 5,
+    "sastavnice": [
+      {
+        "id": "147",
+        "name": "Veleučilište u Bjelovaru"
+      }
+    ]
+  },
+  "20": {
+    "name": "Veleučilište u Karlovcu",
+    "vrsta": 2,
+    "sastavnice": [
+      {
+        "id": "120",
+        "name": "Veleučilište u Karlovcu"
+      }
+    ]
+  },
+  "78": {
+    "name": "Veleučilište u Križevcima",
+    "vrsta": 2,
+    "sastavnice": [
+      {
+        "id": "279",
+        "name": "Veleučilište u Križevcima"
+      }
+    ]
+  },
+  "22": {
+    "name": "Veleučilište u Rijeci",
+    "vrsta": 2,
+    "sastavnice": [
+      {
+        "id": "122",
+        "name": "Veleučilište u Rijeci"
+      }
+    ]
+  },
+  "24": {
+    "name": "Veleučilište u Šibeniku",
+    "vrsta": 2,
+    "sastavnice": [
+      {
+        "id": "124",
+        "name": "Veleučilište u Šibeniku"
+      }
+    ]
+  },
+  "42": {
+    "name": "Veleučilište u Virovitici",
+    "vrsta": 2,
+    "sastavnice": [
+      {
+        "id": "142",
+        "name": "Veleučilište u Virovitici"
+      }
+    ]
+  },
+  "26": {
+    "name": "Veleučilište Velika Gorica",
+    "vrsta": 5,
+    "sastavnice": [
+      {
+        "id": "126",
+        "name": "Veleučilište Velika Gorica"
+      }
+    ]
+  },
+  "50": {
+    "name": "Zagrebačka škola ekonomije i managementa",
+    "vrsta": 5,
+    "sastavnice": [
+      {
+        "id": "150",
+        "name": "Zagrebačka škola ekonomije i managementa"
+      }
+    ]
+  },
+  "52": {
+    "name": "Zdravstveno veleučilište u Zagrebu",
+    "vrsta": 2,
+    "sastavnice": [
+      {
+        "id": "152",
+        "name": "Zdravstveno veleučilište u Zagrebu"
+      }
+    ]
+  }
+}
