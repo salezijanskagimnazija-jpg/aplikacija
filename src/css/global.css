@@ -10,7 +10,7 @@ h1 {
     font-size: 2em;
     font-weight: 300;
     color: rgba(0,0,0,0.6); 
-    margin: 0 0 16px;
+    margin: 16px 0 16px;
 }
 
 h2 {
@@ -51,4 +51,8 @@ a {
 
 .hidden { 
     display: none !important
+}
+
+.default {
+    all: revert;
 }
