@@ -3,4 +3,8 @@
 # Firebase
 .firebase/
 
-./public/index.html
+public/index.html
+
+add_id.py
+
+
