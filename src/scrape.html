@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <link rel="icon" href="../public/favicon.ico">
+
+    <link rel="stylesheet" href="./css/global.css">
+    
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="./js/scrape.js"></script>
 </head>
@@ -238,8 +241,17 @@
         </ul>
         <button id="search-btn">Search</button>
     </div>
-    <script type="module">
-        
-    </script>
+    <div id="programi-container" class="hidden">
+        <table id="programi-table">
+            <tr>
+                <th>Naziv studija</th>
+                <th>Mjesto izvođenja</th>
+                <th>Osnovne informacije</th>
+            </tr>
+        </table>
+    </div>
+    <div id="page-number-container">
+        <h2 id="page-number"></h2>
+    </div>
 </body>
 </html>

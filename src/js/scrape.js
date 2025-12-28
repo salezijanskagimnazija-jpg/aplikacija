@@ -164,6 +164,13 @@ function compare_to_original(lista) {
     console.log("Extra: ", extra);
 }
 
+/**
+ * Function that makes the lista of all the sastavnica ids that
+ * should go into the payload.
+ * @param {*} ucilista  - an object containing all of their ids, vrsta and names, as well
+ * as their sastavnica alongside their ids and names
+ * @returns {Array}     - an array of the (filtered) ids that go into the payloads lista 
+ */
 function make_payload_lista(ucilista) {
     let lista = [];
     let sastavnica_value = document.getElementById("Sastavnice").value;
@@ -216,7 +223,7 @@ function make_payload_lista(ucilista) {
 
 let TotalPages = null;
 /**
- * Scrape programs data from postani-student.hr
+ * Scrape programs data from postani-student.hr using axios.
  */
 async function scrapePrograms() {;
     try {
@@ -231,7 +238,29 @@ async function scrapePrograms() {;
         .then((response) => {
             console.log("First request!")
             console.log(response.data);
-            TotalPages = response.data.d.TotalPages;
+
+            let data = response.data.d;
+            
+            document.getElementById("page-number").innerHTML = "Trenutna stranica:" +
+                data.CurrentPage + " od " + data.TotalPages;
+
+            let programi_table = document.getElementById("programi-table");
+            let programi = data.Programi;
+
+            for (let program in programi) {
+                let new_row = programi_table.insertRow(-1);
+
+                let cell = new_row.insertCell(0);
+                cell.innerHTML = programi[program].naziv;
+
+                cell = new_row.insertCell(1);
+                cell.innerHTML = programi[program].mjesto;
+
+                cell = new_row.insertCell(2);
+                cell.innerHTML = programi[program].programi;
+            }
+
+            document.getElementById("programi-container").classList.remove("hidden");
         })
     } catch (error) {
         console.log(error);
