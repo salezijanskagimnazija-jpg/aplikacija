@@ -5,8 +5,7 @@
 .firebase/
 
 # Public
-public/index.html
 public/github-icon.svg
 
-# Python Scripts
-add_id.py
+# Helper Scripts
+scripts/
