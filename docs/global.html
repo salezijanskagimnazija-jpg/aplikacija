@@ -104,6 +104,532 @@
     
 
     
+    <h4 class="name" id="add_default_options"><span class="type-signature"></span>add_default_options<span class="signature">(selectUcilista, selectSastavnice)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Add default options to the select elements.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>selectUcilista</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">HTMLSelectElement</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The select element for ucilista</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>selectSastavnice</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">HTMLSelectElement</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The select element for sastavnice ucilista</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scrape.js.html">scrape.js</a>, <a href="scrape.js.html#line6">line 6</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="add_options"><span class="type-signature"></span>add_options<span class="signature">(selectUcilista, selectSastavnice, ucilista, vrsta)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Add options, filter by vrsta (-1 is all), to the Ucilista and Sastavnice select elements.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>selectUcilista</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">HTMLSelectElement</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The select element for ucilista.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>selectSastavnice</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">HTMLSelectElement</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The select element for sastavnice.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ucilista</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An json object containing all of the ucilista, their ids,                                 names, and the same info for all of their sastavnice</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>vrsta</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Vrsta ucilista, -1 is the default (all options), look at the first                                 select element in scrape.html for other options and their values.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scrape.js.html">scrape.js</a>, <a href="scrape.js.html#line23">line 23</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="clear_options"><span class="type-signature"></span>clear_options<span class="signature">(selectUcilista, selectSastavnice)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Clears options from select elements for ucilista and sastavnice.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>selectUcilista</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">HTMLSelectElement</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Select element for ucilista.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>selectSastavnice</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">HTMLSelectElement</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Select element for sastavnice.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="scrape.js.html">scrape.js</a>, <a href="scrape.js.html#line71">line 71</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id="displayMethod"><span class="type-signature"></span>displayMethod<span class="signature">(method, action)</span><span class="type-signature"></span></h4>
     
 
@@ -2010,13 +2536,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#displayMethod">displayMethod</a></li><li><a href="global.html#emailLogin">emailLogin</a></li><li><a href="global.html#googleLogin">googleLogin</a></li><li><a href="global.html#init_buttons">init_buttons</a></li><li><a href="global.html#init_methods_form">init_methods_form</a></li><li><a href="global.html#loading_screen">loading_screen</a></li><li><a href="global.html#prepare_email_signin">prepare_email_signin</a></li><li><a href="global.html#prepare_email_signup">prepare_email_signup</a></li><li><a href="global.html#signIn">signIn</a></li><li><a href="global.html#signUp">signUp</a></li><li><a href="global.html#signinListener">signinListener</a></li><li><a href="global.html#signupListener">signupListener</a></li><li><a href="global.html#stop_loading_screen">stop_loading_screen</a></li><li><a href="global.html#test_handler">test_handler</a></li><li><a href="global.html#update_firebase_profile">update_firebase_profile</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#add_default_options">add_default_options</a></li><li><a href="global.html#add_options">add_options</a></li><li><a href="global.html#clear_options">clear_options</a></li><li><a href="global.html#displayMethod">displayMethod</a></li><li><a href="global.html#emailLogin">emailLogin</a></li><li><a href="global.html#googleLogin">googleLogin</a></li><li><a href="global.html#init_buttons">init_buttons</a></li><li><a href="global.html#init_methods_form">init_methods_form</a></li><li><a href="global.html#loading_screen">loading_screen</a></li><li><a href="global.html#prepare_email_signin">prepare_email_signin</a></li><li><a href="global.html#prepare_email_signup">prepare_email_signup</a></li><li><a href="global.html#signIn">signIn</a></li><li><a href="global.html#signUp">signUp</a></li><li><a href="global.html#signinListener">signinListener</a></li><li><a href="global.html#signupListener">signupListener</a></li><li><a href="global.html#stop_loading_screen">stop_loading_screen</a></li><li><a href="global.html#test_handler">test_handler</a></li><li><a href="global.html#update_firebase_profile">update_firebase_profile</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Fri Dec 26 2025 23:11:33 GMT+0100 (Central European Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Sun Dec 28 2025 12:27:54 GMT+0100 (Central European Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>
