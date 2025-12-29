@@ -5,7 +5,8 @@
     <link rel="icon" href="../public/favicon.ico">
 
     <link rel="stylesheet" href="./css/global.css">
-    
+    <link rel="stylesheet" href="./css/programi.css">
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="./js/scrape.js"></script>
 </head>
@@ -25,7 +26,15 @@
                 </select>
 
                 <select id="Ucilista">
+
                 </select>
+
+                <!--
+                 ============== TODO ===============
+                 The options for sastavnica when shown in the drop down menu are
+                 terribly large. Need to somehow truncate them or something.
+                 ===================================
+                 -->
                 <select id="Sastavnice">    
 
                 </select>
@@ -241,6 +250,7 @@
         </ul>
         <button id="search-btn">Search</button>
     </div>
+    <br>
     <div id="programi-container" class="hidden">
         <table id="programi-table">
             <tr>

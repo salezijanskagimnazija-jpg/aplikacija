@@ -16,6 +16,10 @@ Also need to decide whether to use auth with email at all, chances are 99% of us
 
 ## Scraping
 
+### Approach
+
+Maybe need to change approach. Instead of a json that attempts to mimic and organize the data they hold. We could mimic all of their API calls, since they use AJAX calls for virtually everything.
+
 ### Access
 
 Need to add a link to the page somewhere on the main page.

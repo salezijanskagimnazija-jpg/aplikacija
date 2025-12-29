@@ -1,0 +1,18 @@
+#Sastavnice {
+    max-width: 20rem;
+    overflow: scroll;
+    text-overflow: ellipsis;
+}
+
+#Sastavnice option {
+    max-width: 300px;
+    width: 100px;
+    height: 100px;
+    overflow: scroll;
+    text-overflow: ellipsis;
+    white-space: wrap;
+}
+
+#programi-table table, th, td {
+    border: 1px solid;
+}
