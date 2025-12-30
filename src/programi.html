@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1200, initial-scale=1.0">
     <link rel="icon" href="../public/favicon.ico">
 
     <link rel="stylesheet" href="./css/global.css">
@@ -13,7 +13,7 @@
 </head>
 <body>
     <h1>Programi</h1>
-    <div>
+    <div id="filter-container">
         <ul>
             <li>
                 <select id="VrstaUcilista">
@@ -25,11 +25,15 @@
                     <option value="5">Privatne veleucilista</option>
                     <option value="6">Privatne visoke skole</option>
                 </select>
-
+            </li>
+            
+            <li>
                 <select id="Ucilista">
 
                 </select>
+            </li>
 
+            <li>
                 <!--
                  ============== TODO ===============
                  The options for sastavnica when shown in the drop down menu are
@@ -39,7 +43,9 @@
                 <select id="Sastavnice">    
 
                 </select>
+            </li>
 
+            <li>
                 <select id="Mjesto">
                     <option value="-1">Sva mjesta</option>
                     <option value="Biograd na Moru">Biograd na Moru</option>
@@ -83,7 +89,9 @@
                     <option value="Zagreb">Zagreb</option>
                     <option value="Zaprešić">Zaprešić</option>
                 </select>
+            </li>
 
+            <li>
                 <select id="podrucje">
                     <option selected="selected" value="-1">Sva područja</option>
                     <option value="9">Arhitektura</option>
@@ -105,7 +113,9 @@
                     <option value="2">Tehničke znanosti</option>
                     <option value="19">Umjetničko interdisciplinarno područje znanosti i umjetnosti</option>
                 </select>
+            </li>
 
+            <li>
                 <select id="polja">
                     <option value="-1">Sva polja</option>
                     <option value="104">Animirani film</option>

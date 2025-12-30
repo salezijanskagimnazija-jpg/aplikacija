@@ -1,3 +1,11 @@
+#filter-container {
+    background-color: antiquewhite;
+    padding: 10px;
+}
+
+#filter-container ul {
+    list-style: none;
+}
 #Sastavnice {
     max-width: 20rem;
     overflow: scroll;
@@ -27,13 +35,19 @@
 
 #widget-container {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 800px;
+    left: 800px;
     transform: translate(-50%, -50%);
     z-index: 999;
+    width: 800px;
+    height: 800px;
+    overflow: auto;
 }
 
 #widget-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     background-color: rgb(205, 237, 245);
     width: 800px;
     height: 800px;
