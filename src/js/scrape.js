@@ -238,6 +238,24 @@ function clean_programi() {
     }
 }
 
+const widget_url = 'https://www.postani-student.hr/usercontrols/uvjeticontainer.aspx?id=';
+
+function display_widget(id) {
+    document.querySelector("iframe").srcDoc = "";
+
+    const url = widget_url + id;
+
+    axios.get(url)
+    .then(response => {
+        console.log(response.data); // Logs the fetched data
+        document.querySelector("iframe").srcdoc = response.data;
+    
+        document.getElementById("widget-container").classList.remove("hidden");
+    })
+    .catch(error => {
+    console.error('Error fetching data:', error.message);
+    });
+}
 /**
  * Popuplates the programi table with scraped programi data for a single page.
  * @param {*} data - the (`response.data.d) object from the response to the axios post request.
@@ -251,6 +269,7 @@ function populate_programi(data) {
 
         let cell = new_row.insertCell(0);
         cell.innerHTML = programi[program].naziv;
+        cell.addEventListener("click", () => display_widget(programi[program].idPrograma));
 
         cell = new_row.insertCell(1);
         cell.innerHTML = programi[program].mjesto;

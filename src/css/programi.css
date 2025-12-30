@@ -24,3 +24,18 @@
 .previous-btn {
     float: left;
 }
+
+#widget-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: beige;
+    z-index: 999;
+}
+
+#widget-container iframe {
+    width: 800px;
+    height: 800px;
+    z-index: 999;
+}
