@@ -8,8 +8,12 @@ import logger from '../utils/logger.js';
 function add_default_options(selectUcilista, selectSastavnice) {
     console.log("Adding default options...");
     let option = new Option('Sva visoka učilišta', "-1");
+
+    option.setAttribute("selected", "selected");
     selectUcilista.add(option);
+
     option = new Option('Sve sastavnice', "-1");
+    option.setAttribute("selected", "selected");
     selectSastavnice.add(option);
 }
 
