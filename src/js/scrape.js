@@ -373,3 +373,7 @@ document.querySelectorAll(".next-btn").forEach(button => {
 document.querySelectorAll(".previous-btn").forEach(button => {
     button.addEventListener("click", previous_page);
 });
+
+document.getElementById("close-btn").addEventListener("click", () => {
+    document.getElementById("widget-container").classList.add("hidden");
+});
