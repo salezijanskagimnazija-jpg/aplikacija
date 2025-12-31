@@ -47,7 +47,7 @@ form#names-form.auth-form div label {
 
 .method-btn {
     padding: 1.5%;
-    background-color: #007bff;
+    background-color: #00aeb5;
     color: white;
     border: none;
     border-radius: 4px;
@@ -59,7 +59,7 @@ form#names-form.auth-form div label {
 }
 
 .method-btn:hover {
-    background-color: #0056b3;
+    background-color: #006d7c;
 }
 
 .back-btn {
