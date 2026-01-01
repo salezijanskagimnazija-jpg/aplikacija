@@ -1,0 +1,31 @@
+name: Bodovi
+on: workflow_dispatch
+
+jobs:  
+  bodovi:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          
+      - name: Install dependencies
+        run: npm ci  # Uses package-lock.json
+        
+      - name: Run bodovi
+        run: npm run bodovi
+        
+      - name: Commit and push changes
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          git add public/bodovi.json
+          git diff --quiet && git diff --staged --quiet || (
+            git commit -m "chore: update scraped data"
+            git push
+          )
