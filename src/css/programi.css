@@ -1,59 +1,19 @@
-#filter-container {
-    background-color: antiquewhite;
-    padding: 10px;
-}
-
-#filter-container ul {
+ul {
     list-style: none;
 }
-#Sastavnice {
-    max-width: 20rem;
-    overflow: scroll;
-    text-overflow: ellipsis;
+
+#search-btn-container {
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+    justify-content: center;
 }
 
-#Sastavnice option {
-    max-width: 300px;
-    width: 100px;
-    height: 100px;
-    overflow: scroll;
-    text-overflow: ellipsis;
-    white-space: wrap;
+#search-btn {
+    width: 100%;
 }
 
-#programi-table table, th, td {
-    border: 1px solid;
-}
 
-.next-btn {
-    float: right;
-}
-
-.previous-btn {
-    float: left;
-}
-
-#widget-container {
-    position: absolute;
-    top: 800px;
-    left: 800px;
-    transform: translate(-50%, -50%);
-    z-index: 999;
-    width: 800px;
-    height: 800px;
-    overflow: auto;
-}
-
-#widget-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: rgb(205, 237, 245);
-    width: 800px;
-    height: 800px;
-    z-index: 999;
-    border: 1px solid black;
-}
 
 #close-btn {
     float: right;

@@ -124,6 +124,23 @@ tbody tr {
     color: #3b3b3b;
     font-size: x-large;
 }
+
+tbody tr td {
+    padding: 10px;
+}
+
+select {
+    width: 100%;
+    font-size: large;
+    padding: 2px;
+}
+
+iframe {
+    width: 100%;
+    min-height: 400px;
+    height: 80%;
+}
+
 @media (max-width: 600px) {
     thead tr {
         font-size: x-large;

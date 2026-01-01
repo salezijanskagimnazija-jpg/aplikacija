@@ -14,90 +14,105 @@
     <script type="module" src="./js/scrape.js"></script>
 </head>
 <body>
-    <h1>Programi</h1>
-    <div id="filter-container card">
-        <ul>
-            <li>
-                <select id="VrstaUcilista">
+    <div class="container">
+        <div class="title">
+            <h1 class="title">Programi</h1>
+        </div>     
 
-                </select>
-            </li>
+        <div class="card">
+            <div>
+                <ul>
+                    <li>
+                        <select id="VrstaUcilista" title="Select vrsta učilišta.">
+
+                        </select>
+                    </li>
+                    
+                    <li>
+                        <select id="Ucilista" title="Select učilište.">
+
+                        </select>
+                    </li>
+
+                    <li>
+                        <!--
+                        ============== TODO ===============
+                        The options for sastavnica when shown in the drop down menu are
+                        terribly large. Need to somehow truncate them or something.
+                        ===================================
+                        -->
+                        <select id="Sastavnice" title="Select sastavnica učilišta.">    
+
+                        </select>
+                    </li>
+
+                    <li class="hidden">
+                        <select id="PosebnaKvota" title="Select posebna kvota."></select>
+                    </li>
+
+                    <li>
+                        <select id="Mjesto" title="Select mjesto programa.">
+                            
+                        </select>
+                    </li>
+
+                    <li class="hidden">
+                        <select id="podrucje" title="Select područje kojim se program bavi.">
+                            
+                        </select>
+                    </li>
+
+                    <li class="hidden">
+                        <select id="polja" title="Select polje kojim se program bavi.">
+                            
+                        </select>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="search-btn-container">
+                <button id="search-btn" type="button">Search</button>
+        
+            </div>
+        </div>
+
+        <div id="widget-container" class="card hidden">
+            <button id="close-btn" type="button">X</button>
+            <iframe title="Prikazuje widget sa informacijama o programu.">
+                
+            </iframe>
+        </div>
+        
+        <div id="programi-container" class="card hidden">
+            <div>
+                <button class="previous-btn hidden" type="button">Previous</button>
+                <button class="next-btn hidden" type="button">Next</button>
+            </div>
+
+            <div>
+                <table id="programi-table">
+                    <thead>
+                        <tr>
+                            <th>Naziv studija</th>
+                            <th>Mjesto izvođenja</th>
+                            <th>Osnovne informacije</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
             
-            <li>
-                <select id="Ucilista">
+            <div>
+                <button class="previous-btn hidden" type="button">Previous</button>
+                <button class="next-btn hidden" type="button">Next</button>
+            </div>
 
-                </select>
-            </li>
-
-            <li>
-                <!--
-                 ============== TODO ===============
-                 The options for sastavnica when shown in the drop down menu are
-                 terribly large. Need to somehow truncate them or something.
-                 ===================================
-                 -->
-                <select id="Sastavnice">    
-
-                </select>
-            </li>
-
-            <li class="hidden">
-                <select id="PosebnaKvota"></select>
-            </li>
-
-            <li>
-                <select id="Mjesto">
-                    
-                </select>
-            </li>
-
-            <li class="hidden">
-                <select id="podrucje">
-                    
-                </select>
-            </li>
-
-            <li class="hidden">
-                <select id="polja">
-                    
-                </select>
-            </li>
-        </ul>
-        <button id="search-btn" type="button">Search</button>
-    </div>
-
-    <br>
-
-    <button class="previous-btn hidden" type="button">Previous</button>
-    <button class="next-btn hidden" type="button">Next</button>
-
-    <div id="programi-container" class="hidden">
-        <table id="programi-table">
-            <thead>
-                <tr>
-                    <th>Naziv studija</th>
-                    <th>Mjesto izvođenja</th>
-                    <th>Osnovne informacije</th>
-                </tr>
-            </thead>
-            <tbody>
-
-            </tbody>
-        </table>
-    </div>
-
-    <div id="page-number-container">
-        <h2 id="page-number"></h2>
-    </div>
-    
-    <button class="previous-btn hidden">Previous</button>
-    <button class="next-btn hidden">Next</button>
-
-    <div id="widget-container" class="hidden">
-        <button id="close-btn">X</button>
-        <iframe>
-
-        </iframe>
+            <div id="page-number-container">
+                <h2 id="page-number"></h2>
+            </div>
+        </div>
     </div>
 </body>
 </html>
