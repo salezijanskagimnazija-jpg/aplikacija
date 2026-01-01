@@ -1,7 +1,9 @@
 {
     "name": "boodovi",
+    "version": "1.0.0",
+    "type": "module",
     "scripts": {
-        "bodovi": "node ./experiments/pdf/bodovi.js"
+        "bodovi": "node scripts/bodovi.js"
     },
     "dependencies": {
         "axios": "^1.13.2",

@@ -25,6 +25,7 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
           git add public/bodovi.json
+          git add public/Bodovni-pragovi-2024.pdf
           git diff --quiet && git diff --staged --quiet || (
             git commit -m "chore: update scraped data"
             git push
