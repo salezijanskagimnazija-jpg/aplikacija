@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="hr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Bodovi</title>
+
+        <link rel="stylesheet" href="global.css">
+        <style>
+            #form-container {
+                margin-right: auto;
+                margin-left: auto;
+                margin-bottom: 30px;
+                max-width: 400px;
+            }
+
+            .bodovi-cell {
+                text-align: center;
+            }
+
+            .naziv-cell {
+                padding: 5px;
+            }
+
+            .hidden {
+                display: none !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="title">
+                <h1 class="title">Bodovi</h1>
+            </div>
+
+            <div id="form-container" class="card">
+                <h2>Bodovi</h2>
+                <form>
+                    <div>
+                        <label for="search">Upiši naziv ili dio naziva programa.</label>
+                        <input type="text" id="search" name="search"/>
+                    </div>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+
+            <div id="table-container" class="hidden">
+                <table id="bodovi-table">
+                    <thead>
+                        <tr>
+                            <td>Naziv programa</td>
+                            <td>Potrebni bodovi</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <script type="module">
+            async function getData() {
+                const url = "./bodovi.json";
+                try {
+                    const response = await fetch(url);
+                    if (!response.ok) {
+                        throw new Error(`Response status: ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    return result;
+                } catch (error) {
+                    console.error(error.message);
+                }
+            }
+
+            function searchData(data, searchQuery) {
+                let temp = data;
+                let tempQuery = searchQuery.toLowerCase();
+                let programs = [];
+                let index = 0;
+                try {
+                    if (tempQuery === "") {
+                        for (let program in temp) {
+                            programs[index++] = program;
+                        }
+                    } else {
+                        for (let program in temp) {
+                            if (program.toLowerCase().includes(tempQuery)) {
+                                programs[index++] = program;
+                            }
+                        }
+                    }
+                    return programs;
+                } catch (error) {
+                    console.log("Error searching data: ", error);
+                }
+            };
+
+            function populateTable(data, programs) {
+                const table = document.getElementById("bodovi-table");
+                let tableBody = table.querySelector("tbody");
+
+                programs.forEach((program) => {
+                    let new_row = tableBody.insertRow(-1);
+
+                    let cell = new_row.insertCell(0);
+                    cell.classList.add("naziv-cell");
+                    cell.innerHTML = program;
+
+                    cell = new_row.insertCell(1);
+                    cell.innerHTML = data[program];
+                    cell.classList.add("bodovi-cell");
+                });
+            };
+
+            const data = await getData();
+
+            const form = document.querySelector("form");
+
+            form.addEventListener("submit", (event) => {
+                event.preventDefault();
+
+                const formData = new FormData(form);
+
+                const searchQuery = formData.get("search");
+
+                console.log("Searching for:", searchQuery);
+
+                let programs = searchData(data, searchQuery);
+                
+                populateTable(data, programs);
+
+                document.getElementById("table-container").classList.remove("hidden");
+            });
+        </script>
+    </body>
+</html>

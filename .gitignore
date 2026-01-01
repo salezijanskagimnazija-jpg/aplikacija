@@ -21,7 +21,8 @@ experiments/pdf/*
 !experiments/scrape/programi.js
 !experiments/scrape/package.json
 
-# PDF
+# PDF - BODOVI
 !experiments/pdf/bodovi.js
+!experiments/pdf/bodovi.html
 !experiments/pdf/Bodovni-pragovi-2024.pdf
 !expriments/pdf/package.json
