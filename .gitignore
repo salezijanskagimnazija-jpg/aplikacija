@@ -26,3 +26,5 @@ experiments/pdf/*
 !experiments/pdf/bodovi.html
 !experiments/pdf/Bodovni-pragovi-2024.pdf
 !expriments/pdf/package.json
+!experiments/pdf/bodovi.json
+!experiments/pdf/global.css
