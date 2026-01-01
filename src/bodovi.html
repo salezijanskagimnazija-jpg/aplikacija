@@ -7,7 +7,7 @@
         <title>Bodovi</title>
 
         <link rel="icon" href="../public/favicon.ico">
-        
+
         <link rel="stylesheet" href="css/global.css">
         <style>
             #form-container {
@@ -23,10 +23,6 @@
 
             .naziv-cell {
                 padding: 5px;
-            }
-
-            .hidden {
-                display: none !important;
             }
         </style>
     </head>
@@ -117,27 +113,48 @@
 
             function cleanTable() {
                 let table = document.getElementById("bodovi-table");
-                let rows = table.querySelector("tr");
-
-                for (let i=0; i < rows.length; i++) {
-                    rows[i].remove();
-                }
+                let tbody = table.querySelector("tbody");
+                let rows = tbody.querySelectorAll("tr");
+                
+                rows.forEach((row) => {
+                    row.remove();
+                });
             }
 
-            const data = await getData();
-            const input = document.getElementById("search");
+            function table_init(data) {
+                console.log("Initializing table...");
 
-            input.addEventListener("input", (event) => {
+                let programs = searchData(data, "");
 
-                const searchQuery = event.target.value;
-
-                console.log("Searching for:", searchQuery);
-
-                let programs = searchData(data, searchQuery);
-                
-                cleanTable();
                 populateTable(data, programs);
-            });
+
+                document.getElementById("table-container").classList.remove("hidden");
+
+                console.log("Table initialized.")
+            }
+
+            async function main() {
+                const data = await getData();
+
+                table_init(data);
+
+                const input = document.getElementById("search");
+
+                input.addEventListener("input", (event) => {
+
+                    const searchQuery = event.target.value;
+
+                    console.log("Searching for:", searchQuery);
+
+                    let programs = searchData(data, searchQuery);
+
+                    cleanTable();   
+
+                    populateTable(data, programs);
+                });
+            }
+            
+            main();
         </script>
     </body>
 </html>

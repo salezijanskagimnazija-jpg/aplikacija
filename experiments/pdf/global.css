@@ -76,6 +76,10 @@ a {
     border-radius: 4px;
 }
 
+a:hover {
+    background-color: #006d7c;
+}
+
 button {
     background-color: #00aeb5;
     color: whitesmoke;
