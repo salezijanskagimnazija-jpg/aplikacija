@@ -300,6 +300,16 @@ function display_widget(id) {
     console.error('Error fetching data:', error.message);
     });
 }
+
+function scrollToWidget() {
+    const iframe = document.querySelector("iframe");
+    iframe.scrollIntoView({
+        behavior: 'instant',
+        block: 'center',
+        inline: 'center'
+    });
+}
+
 /**
  * Popuplates the programi table with scraped programi data for a single page.
  * @param {*} data - the (`response.data.d) object from the response to the axios post request.
@@ -314,7 +324,13 @@ function populate_programi(data) {
 
         let cell = new_row.insertCell(0);
         cell.innerHTML = programi[program].naziv;
-        cell.addEventListener("click", () => display_widget(programi[program].idPrograma));
+        cell.addEventListener("click", () => {
+            display_widget(programi[program].idPrograma);
+
+            setTimeout(() => {
+                scrollToWidget();
+            }, 100);
+        });
 
         cell = new_row.insertCell(1);
         cell.innerHTML = programi[program].mjesto;

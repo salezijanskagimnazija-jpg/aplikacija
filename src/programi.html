@@ -77,19 +77,22 @@
         </div>
 
         <div id="widget-container" class="card hidden">
-            <button id="close-btn" type="button">X</button>
             <iframe title="Prikazuje widget sa informacijama o programu.">
                 
             </iframe>
+            <button id="close-btn" type="button">X</button>
         </div>
         
         <div id="programi-container" class="card hidden">
-            <div>
+            <h2>Tablica Programa</h2>
+            <p>Pritisni na naziv studija za više informacija.</p>
+                
+            <div class="previous-btn next-btn">
                 <button class="previous-btn hidden" type="button">Previous</button>
                 <button class="next-btn hidden" type="button">Next</button>
             </div>
 
-            <div>
+            <div class="table">
                 <table id="programi-table">
                     <thead>
                         <tr>
@@ -104,13 +107,13 @@
                 </table>
             </div>
             
-            <div>
+            <div class="previous-btn next-btn">
                 <button class="previous-btn hidden" type="button">Previous</button>
                 <button class="next-btn hidden" type="button">Next</button>
             </div>
 
-            <div id="page-number-container">
-                <h2 id="page-number"></h2>
+            <div id="page-number-container" class="pager">
+                <h2 id="page-number" class="pager"></h2>
             </div>
         </div>
     </div>

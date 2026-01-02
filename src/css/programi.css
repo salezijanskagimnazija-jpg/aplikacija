@@ -13,8 +13,32 @@ ul {
     width: 100%;
 }
 
+div.previous-btn.next-btn {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
 
+button.next-btn {
+    width: 20%;
+    min-width: 80px;
+}
+
+button.previous-btn {
+    width: 20%;
+    min-width: 80px;
+}
+
+#page-number-container {
+    margin-top: 10px;
+}
+
+#widget-container {
+    display: flex;
+    flex-direction: column;
+}
 
 #close-btn {
-    float: right;
+    width: 100%;
+    margin-top: 5px;
 }

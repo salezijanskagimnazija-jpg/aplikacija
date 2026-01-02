@@ -27,6 +27,12 @@ body {
 */
 }
 
+@media (max-width: 300px) {
+    .container {
+        overflow-x: scroll;
+    }
+}
+
 .container {
     width: 100%;
     max-width: 800px;
@@ -129,6 +135,10 @@ tbody tr td {
     padding: 10px;
 }
 
+div.table {
+    margin: 5px 0 5px 0;
+}
+
 select {
     width: 100%;
     font-size: large;
@@ -148,6 +158,9 @@ iframe {
     tbody tr {
         font-size: medium;
     }
+    div.table {
+        overflow-x: scroll;
+    }
 }
 
 .card { background: white; /*max-width: 360px; margin: 100px auto 16px;*/ padding: 32px 24px; border-radius: 3px; }
@@ -157,6 +170,12 @@ iframe {
 .card a { display: block; text-align: center; background: #00aeb5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
 .card a:hover {background: #006d7c}
 .card, .card a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+
+@media (max-width: 300px) {
+    .card {
+        overflow-x: scroll;
+    }
+}
 
 #load {
     color: rgba(0,0,0,0.4); 
