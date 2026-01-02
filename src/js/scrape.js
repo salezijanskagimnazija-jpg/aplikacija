@@ -24,7 +24,19 @@ async function main() {
         initButtons(ucilista);
 
         document.getElementById("VrstaUcilista").addEventListener("change", () => {
-            vrstaFilter(ucilista);
+            filter(ucilista);
+        });
+
+        document.getElementById("Ucilista").addEventListener("change", () => {
+            filter(ucilista);
+        });
+
+        document.getElementById("Sastavnice").addEventListener("change", () => {
+            filter(ucilista);
+        });
+
+        document.getElementById("Mjesto").addEventListener("change", () => {
+            filter(ucilista);
         });
 
         console.log('App ready.');
@@ -39,18 +51,22 @@ async function main() {
  * @param {object} ucilista - Ucilista information object.
  * @see {@link ../data/ucilista.json} for the exact structure.
  */
-function vrstaFilter(ucilista) {
+function filter(ucilista) {
     let vrsta = document.getElementById("VrstaUcilista").value;
+    let uciliste = document.getElementById("Ucilista").value;
+    let sastavnica = document.getElementById("Sastavnice").value;
+    let mjesto = document.getElementById("Mjesto").value;
 
     logger.line("=", 10);
     console.log("Selected vrsta: ", vrsta);
 
     let selectUcilista = document.getElementById("Ucilista");
     let selectSastavnice = document.getElementById("Sastavnice");
+    let selectMjesta = document.getElementById("Mjesto");
 
-    clear_options(selectUcilista, selectSastavnice);
+    clear_options(selectUcilista, selectSastavnice, selectMjesta);
     
-    add_options(selectUcilista, selectSastavnice, ucilista, vrsta);
+    add_options(selectUcilista, selectSastavnice, selectMjesta, ucilista, vrsta, uciliste, sastavnica, mjesto);
 }
 
 function initButtons(ucilista) {
@@ -81,7 +97,7 @@ function initButtons(ucilista) {
  * @param {HTMLSelectElement} selectUcilista        - The select element for ucilista 
  * @param {HTMLSelectElement} selectSastavnice      - The select element for sastavnice ucilista
  */
-function add_default_options(selectUcilista, selectSastavnice) {
+function add_default_options(selectUcilista, selectSastavnice, selectMjesta) {
     console.log("Adding default options...");
     let option = new Option('Sva visoka učilišta', "-1");
 
@@ -91,6 +107,10 @@ function add_default_options(selectUcilista, selectSastavnice) {
     option = new Option('Sve sastavnice', "-1");
     option.setAttribute("selected", "selected");
     selectSastavnice.add(option);
+
+    option = new Option('Sva mjesta', "-1");
+    option.setAttribute("selected", "selected");
+    selectMjesta.add(option);
 }
 
 /**
@@ -114,6 +134,30 @@ function filter_by_vrsta(vrsta, ucilista) {
 }
 
 /**
+ * 
+ * @param {*} sastavnica 
+ * @param {*} ucilista 
+ * @returns 
+ */
+function findUcilisteBySastavnica(sastavnica, ucilista) {
+    for (let uciliste in ucilista) {
+        for (let s in ucilista[uciliste].sastavnice) {
+            
+            if (ucilista[uciliste].sastavnice[s].id == sastavnica) {
+                return {
+                    sastavnica_id: ucilista[uciliste].sastavnice[s].id,
+                    sastavnica_name: ucilista[uciliste].sastavnice[s].name,
+                    uciliste_id: uciliste,
+                    uciliste_name: ucilista[uciliste].name,
+                    mjesta: ucilista[uciliste].sastavnice[s].mjesta
+                }
+            }
+        }
+    }
+}
+
+
+/**
  * Add options, filter by vrsta (-1 is all), to the Ucilista and Sastavnice select elements.
  * @param {HTMLSelectElement} selectUcilista    - The select element for ucilista. 
  * @param {HTMLSelectElement} selectSastavnice  - The select element for sastavnice.
@@ -122,48 +166,76 @@ function filter_by_vrsta(vrsta, ucilista) {
  * @param {number} vrsta             - Vrsta ucilista, -1 is the default (all options), look at the first
  *                                  select element in scrape.html for other options and their values.
  */
-function add_options(selectUcilista, selectSastavnice, ucilista, vrsta) {
+function add_options(selectUcilista, selectSastavnice, selectMjesta, ucilista, vrsta, uciliste, sastavnica, mjesto) {
     console.log("Adding options...");
-    add_default_options(selectUcilista, selectSastavnice);
+    add_default_options(selectUcilista, selectSastavnice, selectMjesta);
 
-    let ucilista_vrsta = filter_by_vrsta(vrsta, ucilista);
+    let mjesta = [];
+    for (let u in ucilista) {
+        let u_added = false;
+        if (vrsta == "-1" || ucilista[u].vrsta == vrsta) {
+            console.log("v")
+            if (uciliste == "-1" || uciliste == u) {
+                console.log("u")
+                ucilista[u].sastavnice.forEach((s) => {
+                    let s_added = false;
+                    if (sastavnica == "-1" || sastavnica == s.id) {
+                        console.log("s")
+                        s.mjesta.forEach((m) => {
+                            if (mjesto == "-1" || m == mjesto) {
+                                console.log("m")
+                                if (!u_added) {
+                                    console.log("Uciliste:", ucilista[u].name);
+                                    let option = new Option(ucilista[u].name, u);
+                                    if (uciliste != "-1") {
+                                        option.setAttribute("selected", "selected");
+                                    }
+                                    selectUcilista.add(option);
+                                    u_added = true;
+                                }
 
-    let option, id, name = null;
-    let uciliste_index, sastavnica_index = 1;
-    for (let uciliste in ucilista_vrsta) {
-        logger.line();
-        console.log("Adding options for:", ucilista_vrsta[uciliste]);
-        name = ucilista_vrsta[uciliste].name;
-        console.log("Name and id: ", name, uciliste);
+                                if (!s_added) {
+                                    console.log("Sstavnica", s.name);
+                                    let option = new Option(s.name, s.id);
+                                    if (sastavnica != "-1") {
+                                        option.setAttribute("selected", "selected");
+                                    }
+                                    selectSastavnice.add(option);
+                                    s_added = true;
+                                }
 
-        option = new Option(name, uciliste);
-        selectUcilista.add(option, uciliste_index++);
+                                s.mjesta.filter((m) => {
+                                    if (!mjesta.includes(m)) {
+                                        mjesta.push(m);
 
-        let sastavnice = ucilista_vrsta[uciliste].sastavnice;
-        for (let sastavnica in sastavnice) {
-            console.log("Adding:", sastavnice[sastavnica]);
-            id = sastavnice[sastavnica].id;
-            name = sastavnice[sastavnica].name;
-            console.log("Sastavnica name and id:", name, id)
-
-            option = new Option(name, id);
-            selectSastavnice.add(option, sastavnica_index++);
+                                        console.log("Mjesto", m)
+                                        let option = new Option(m, m);
+                                        if (m == mjesto) {
+                                            option.setAttribute("selected", "selected");
+                                        }
+                                        selectMjesta.add(option);
+                                    }
+                                })
+                            }
+                        })
+                    }
+                });
+            }
         }
-        logger.line();
     }
-
-    console.log("Options addedd...");
 }
 
 /**
  * Clears options from select elements for ucilista and sastavnice.
  * @param {HTMLSelectElement} selectUcilista    - Select element for ucilista.
  * @param {HTMLSelectElement} selectSastavnice  - Select element for sastavnice.
+ * @param {HTMLSelectElement}
  */
-function clear_options(selectUcilista, selectSastavnice) {
+function clear_options(selectUcilista, selectSastavnice, selectMjesta) {
     // clear select element
     selectUcilista.innerHTML = "";
     selectSastavnice.innerHTML = "";
+    selectMjesta.innerHTML = "";
 }
 
 async function getUcilista() {
@@ -171,7 +243,7 @@ async function getUcilista() {
 
     let ucilista = null;
     try {
-        const response = await fetch("./data/ucilista.json");
+        const response = await fetch("../public/ucilista.json");
 
         if (!response.ok) {
             throw new Error(`HTTP error: ${response.status}`);
