@@ -35,6 +35,10 @@ onAuthStateChanged(auth, async (user) => {
             `Username: ${user.displayName} || ` +
             `Email: ${user.email} || ` +
             `Rezultat testa: ${score || "-"}`;
+
+      document.getElementById("fullName").innerText = punoIme;
+      document.getElementById("ageNum").innerText = godine;
+      document.getElementById("pick").innerText = score;
           
 
     } catch (error) {
