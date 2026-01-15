@@ -15,8 +15,6 @@ async function getData() {
 async function main() {
     console.log("App starting...");
     const json = await getData();
-
-    
 };
 
 main();

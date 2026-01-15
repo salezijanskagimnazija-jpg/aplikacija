@@ -404,6 +404,9 @@ function scrollToWidget() {
     });
 }
 
+function openProgramPage(event) {
+    window.location.assign("program_n.html");
+}
 /**
  * Popuplates the programi table with scraped programi data for a single page.
  * @param {*} data - the (`response.data.d) object from the response to the axios post request.
@@ -418,10 +421,16 @@ function populate_programi(data) {
 
         let cell = new_row.insertCell(0);
         cell.innerHTML = programi[program].naziv;
-        cell.addEventListener("click", async () => {
-            await display_widget(programi[program].idPrograma);
+        cell.addEventListener("click", async (event) => {
+            event.preventDefault();
 
-            scrollToWidget();
+            // await display_widget(programi[program].idPrograma);
+
+            // scrollToWidget();
+
+            localStorage.setItem("idPrograma", programi[program].idPrograma);
+
+            openProgramPage(event);
         });
 
         cell = new_row.insertCell(1);
