@@ -24,10 +24,6 @@
             .naziv-cell {
                 padding: 5px;
             }
-
-            .kvota-table{
-                display: none; /* Hide the "Ukupna upisna kvota" table */
-            }
         </style>
     </head>
     <body>
@@ -42,7 +38,7 @@
                     <label for="search">Upiši naziv ili dio naziva programa.</label>
                     <input type="text" id="search" name="search"/>
                 </div>
-                <button id="statSwitch" onclick="switchTable()">Bodovi/Upisna kvota</button>
+                <button id="statSwitch">Bodovi/Upisna kvota</button>
             </div>
 
             <div id="table-container" class="hidden card">
@@ -57,7 +53,8 @@
 
                     </tbody>
                 </table>
-                <table id="kvota-table">
+
+                <table id="kvota-table" class="hidden">
                     <thead>
                         <tr>
                             <td>Naziv programa</td>
@@ -73,23 +70,14 @@
         <script type="module">
             async function getData() {
                 const url = "../public/bodovi.json";
-                const url2 = "../public/broj_prijava.json";
                 try {
                     const response = await fetch(url);
-                    const response2 = await fetch(url2); // isto kao i za bodove, ali za broj_prijava.json za kvotu upisa
-
                     if (!response.ok) {
                         throw new Error(`Response status: ${response.status}`);
-                    }
-                    if (!response2.ok) {
-                        throw new Error(`Response status: ${response2.status}`);
                     }
 
                     const result = await response.json();
                     return result;
-                    const result2 = await response2.json(); // isto kao i za bodove, ali za broj_prijava.json za kvotu upisa
-                    return result2;
-                    
                 } catch (error) {
                     console.error(error.message);
                 }
@@ -158,17 +146,13 @@
             }
 
             function switchTable() {
-                if (document.getElementById("kvota-table").style.display = "none"){
-                    document.getElementById("kvota-table").style.display = "table";
-                    document.getElementById("bodovi-table").style.display = "none";
-                  }
-    
-                    else if(document.getElementById("bodovi-table").style.display = "none"){
-                        document.getElementById("bodovi-table").style.display = "table";
-                        document.getElementById("kvota-table").style.display = "none";
-                    }
-                }; 
-            }
+                console.log("switching tables")
+                const kvota = document.getElementById("kvota-table");
+                const bodovi = document.getElementById("bodovi-table");
+
+                kvota.classList.toggle("hidden");
+                bodovi.classList.toggle("hidden");
+            }; 
             
 
             async function main() {
@@ -190,6 +174,8 @@
 
                     populateTable(data, programs);
                 });
+
+                document.getElementById("statSwitch").addEventListener("click", switchTable);
             }
             
             main();
