@@ -8,17 +8,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore(app);
 
-function uzmiInicijale(fullName){
-  if (!fullName || fullName.trim() === '') return '';
-  const imena = fullName.trim().split(' ');
-  
-  if imena.length === 0) return '';
-  const imeInicijal = imena[0].charAt(0).toUpperCase();
-  const prezimeInicijali = imena.length > 1 ? imena[imena.length - 1].charAt(0).toUpperCase() : '';
-
-  return `${imeInicijal}${prezimeInicijal}`;
-}
-
 onAuthStateChanged(auth, async (user) => {
   if (user) {
 
@@ -31,14 +20,13 @@ onAuthStateChanged(auth, async (user) => {
       let score = 0;
       let spol = "";
       if (userSnap.exists()) {
-        const data = userSnap.data();¸8
+        const data = userSnap.data();
         godine = data.godine;
         score = data.score;
         punoIme = `${data.first} ${data.last}`;
         spol = data.spol;
       }
 
-      const inicijali = uzmiInicijale(punoIme);
       const infoEl = document.querySelector('.user-info p');
       infoEl.innerHTML = 
             `Ime i prezime: ${punoIme} || ` +
@@ -51,12 +39,7 @@ onAuthStateChanged(auth, async (user) => {
       document.getElementById("fullName").innerText = punoIme;
       document.getElementById("ageNum").innerText = godine;
       document.getElementById("pick").innerText = score;
-
-      const inicijaliElement = document.getElementById("inicijali");
-      if (inicijaliElement) {
-        inicijaliElement.innerHTML = inicijali;
-      }
-      console.log("Inicijali korisnika: ", inicijali);
+          
 
     } catch (error) {
       console.error("Greška u dohvatu podataka: ", error);
