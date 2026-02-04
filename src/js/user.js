@@ -8,6 +8,21 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore(app);
 
+function splitGoogleName(displayName) {
+  if (!displayName) return {
+    first: '',
+    last: '' };
+  const parts = displayName.trim().split(' ');
+  
+  if (parts.length === 1) {
+    return { first: parts[0], last: '' };
+  }
+  const last = parts.pop(); // prezime :DD
+  const first = parts.join(' '); // ime (ostatak) :DD
+  
+  return { first, last };
+}
+
 function uzmiInicijale(fullName){
   if (!fullName || fullName.trim() === '') return '';
   const imena = fullName.trim().split(' ');
@@ -30,6 +45,11 @@ onAuthStateChanged(auth, async (user) => {
       let godine = 0;
       let score = 0;
       let spol = "";
+
+      const googleName = splitGoogleName(user.displayName);
+      let firstName = googleName.first;
+      let lastName = googleName.last;
+      
       if (userSnap.exists()) {
         const data = userSnap.data();¸8
         godine = data.godine;
@@ -38,7 +58,21 @@ onAuthStateChanged(auth, async (user) => {
         spol = data.spol;
       }
 
+      
+      if (data.first) firstName = data.first;
+      if (data.last) lastName = data.last;
+      
+      if (data.first && data.last) {
+          punoIme = `${data.first} ${data.last}`.trim();
+        }
+      
+      if (!punoIme && user.email) {
+        punoIme = user.email.split('@')[0];
+      }
+
+      
       const inicijali = uzmiInicijale(punoIme);
+      
       const infoEl = document.querySelector('.user-info p');
       infoEl.innerHTML = 
             `Ime i prezime: ${punoIme} || ` +
