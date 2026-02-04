@@ -23,6 +23,10 @@ h2 {
   margin: 0;
 }
 
+#fullName {
+    color: #3371b3;
+}
+
 .header {
   background-color: #124559;
   display: flex;
@@ -44,7 +48,7 @@ h2 {
 }
 
 .pfp {
-  background-color: red;
+  background-color: #1879c8;
   border-radius: 20em;
   height: 240px;
   width: 240px;
@@ -112,3 +116,4 @@ li {
     flex-direction: column;
   }
 }
+
