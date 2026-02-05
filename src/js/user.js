@@ -27,11 +27,11 @@ function uzmiInicijale(fullName){
   if (!fullName || fullName.trim() === '') return '';
   const imena = fullName.trim().split(' ');
   
-  if imena.length === 0) return '';
+  if (imena.length === 0) return '';
   const imeInicijal = imena[0].charAt(0).toUpperCase();
   const prezimeInicijali = imena.length > 1 ? imena[imena.length - 1].charAt(0).toUpperCase() : '';
 
-  return `${imeInicijal}${prezimeInicijal}`;
+  return `${imeInicijal}${prezimeInicijali}`;
 }
 
 onAuthStateChanged(auth, async (user) => {
@@ -51,46 +51,37 @@ onAuthStateChanged(auth, async (user) => {
       let lastName = googleName.last;
       
       if (userSnap.exists()) {
-        const data = userSnap.data();¸8
+        const data = userSnap.data();
         godine = data.godine;
         score = data.score;
         punoIme = `${data.first} ${data.last}`;
         spol = data.spol;
-      }
 
-      
-      if (data.first) firstName = data.first;
-      if (data.last) lastName = data.last;
-      
-      if (data.first && data.last) {
-          punoIme = `${data.first} ${data.last}`.trim();
+
+        if (data.first) firstName = data.first;
+        if (data.last) lastName = data.last;
+        
+        if (data.first && data.last) {
+            punoIme = `${data.first} ${data.last}`.trim();
+          }
+        
+        if (!punoIme && user.email) {
+          punoIme = user.email.split('@')[0];
         }
-      
-      if (!punoIme && user.email) {
-        punoIme = user.email.split('@')[0];
+
+        
+        const inicijali = uzmiInicijale(punoIme);
+
+        document.getElementById("fullName").innerText = punoIme;
+        document.getElementById("ageNum").innerText = godine;
+        document.getElementById("pick").innerText = score;
+
+        const inicijaliElement = document.getElementById("inicijali");
+        if (inicijaliElement) {
+          inicijaliElement.innerHTML = inicijali;
+        }
+        console.log("Inicijali korisnika: ", inicijali);
       }
-
-      
-      const inicijali = uzmiInicijale(punoIme);
-      
-      const infoEl = document.querySelector('.user-info p');
-      infoEl.innerHTML = 
-            `Ime i prezime: ${punoIme} || ` +
-            `Godine: ${godine || "-"} || ` +
-            `Spol: ${spol || "-"} || ` +
-            `Username: ${user.displayName} || ` +
-            `Email: ${user.email} || ` +
-            `Rezultat testa: ${score || "-"}`;
-
-      document.getElementById("fullName").innerText = punoIme;
-      document.getElementById("ageNum").innerText = godine;
-      document.getElementById("pick").innerText = score;
-
-      const inicijaliElement = document.getElementById("inicijali");
-      if (inicijaliElement) {
-        inicijaliElement.innerHTML = inicijali;
-      }
-      console.log("Inicijali korisnika: ", inicijali);
 
     } catch (error) {
       console.error("Greška u dohvatu podataka: ", error);
